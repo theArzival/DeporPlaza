@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@primaryColor: #29A36C;
+@secondaryColor: #f8f9fa;
+@darkColor: #1e7e34;
+
+.font-btn() {
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+}
+
+// mixins
+.redondear(@radio: 10px) {
+    border-radius: @radio;
+}
+
+* {
+    font-family: 'Lato', sans-serif;
+}
+
+body {
+    margin: 0;
+    overflow: hidden;
+
+}
+
+#form-side {
+    background-color: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    .btn-forms {
+        border: 1px solid #ced4da;
+        .redondear();
+        .font-btn();
+        padding: 10px 12px;
+        font-weight: bold;
+    }
+
+    .btn-forms:hover {
+        background-color: @primaryColor;
+        color: @secondaryColor;
+        transition: 0.4s ease-in-out;
+    }
+
+    .btn-select {
+        background-color: @primaryColor;
+        color: @secondaryColor;
+
+    }
+    .btn-select:hover {
+        background-color: @darkColor;
+        transition: 0.4s ease-in-out;
+        color: @secondaryColor;
+
+    }
+
+    #form-contenedor {
+        width: 80%;
+        max-width: 500px;
+
+        #form-select {
+            
+            padding: 10px 0;
+            gap: 20px;
+
+
+        }
+
+        #form-text {
+            h2 {
+                font-size: 32px;
+                font-weight: bold;
+                color: @primaryColor;
+            }
+
+            p {
+                font-size: 20px;
+                color: #6c757d;
+            }
+        }
+    }
+
+}
+
+.hidden {
+    display: none;
+}

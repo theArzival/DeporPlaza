@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link rel="stylesheet" th:href="@{/css/LoginStyle.css}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+</head>
+
+<body>
+    <div class="row vh-100 overflow-hidden m-0 g-0">
+        <div class="col-6 p-0" id="img-side">
+            <img th:src="@{/img/banner_login.jpg}" alt="Login Banner" class="img-fluid h-100 w-100 object-fit-cover">
+        </div>
+        <div class="col-6 p-0" id="form-side">
+            <div id="form-contenedor">
+                <div class="d-flex justify-content-center mb-3 p-2" id="form-select">
+                    <button class="btn-forms btn-select w-50" onclick="mostrarLogin()" id="btn-login">Iniciar Sesión</button>
+                    <button class="btn-forms w-50" onclick="mostrarRegistro()" id="btn-registro">Registrarse</button>
+                </div>
+                <div id="form-text" class="mb-3 text-center">
+                    <h2>Bienvenido a DeporPlaza Lima</h2>
+                    <p>Ingrese sus credenciales correctamente o registre sus datos.</p>
+                </div>
+                <form class="mb-3 " th:action="@{/login}" th:object="${usuarioLogin}" method="post" id="form-login">
+                    <div class="mb-3">
+                        <label class="" >E-Mail</label>
+                        <input type="email" th:field="*{email}" placeholder="Ingrese su correo electrónico"
+                            class="form-control" id="email" required>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label class="">Contraseña</label>
+                        <div class="input-group">
+                            <input type="password" th:field="*{password}" placeholder="Ingrese su contraseña"
+                                class="form-control" id="password" required oninput="soloPassword()">
+                            <button class="btn btn-outline-secondary" type="button" onclick="mostrarPassword()"><i
+                                    id="passwordIcono" class="bi bi-eye-fill"></i></button>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <button type="submit" class="btn-forms btn-select w-100">Ingresar</button>
+                    </div>
+                </form>
+                <form th:object="${usuarioRegister}" id="form-register" class="hidden">
+                    <input type="hidden" th:field="*{idUsuario}" id="idUsuario">
+                    <div class="mb-3">
+                        <label class="">DNI</label>
+                        <div class="input-group ">
+                            <input type="text" th:field="*{dni}" placeholder="DNI" id="dni" class="form-control"
+                                oninput="this.value=this.value.replace(/[^0-9]/g,'')" maxlength="8" pattern="[0-9]{8}"
+                                required>
+                            <button class="btn btn-outline-secondary" type="button" onclick="buscarDni()"><i
+                                    class="bi bi-search"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="">Nombres</label>
+                        <input type="text" th:field="*{nombres}" placeholder="Nombres" class="form-control" id="nombres"
+                            required readonly tabindex="-1">
+                    </div>
+                    <div class="mb-3">
+                        <label class="">Apellidos</label>
+                        <input type="text" th:field="*{apellidos}" placeholder="Apellidos" class="form-control"
+                            id="apellidos" required readonly tabindex="-1">
+                    </div>
+                    <div class="mb-3">
+                        <label class="">E-Mail</label>
+                        <input type="email" th:field="*{email}" placeholder="Ingrese su correo electrónico"
+                            class="form-control" id="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="">Telefono</label>
+                        <input type="text" th:field="*{telefono}" placeholder="Ingrese su número de teléfono"
+                            class="form-control" id="telefono" oninput="soloNum()">
+                    </div>
+                    <div class="mb-3">
+                        <label class="">Contraseña</label>
+                        <div class="input-group">
+                            <input type="password" th:field="*{password}" placeholder="Ingrese su contraseña"
+                                class="form-control" id="password" required oninput="soloPassword()">
+                            <button class="btn btn-outline-secondary" type="button" onclick="mostrarPassword()"><i
+                                    id="passwordIcono" class="bi bi-eye-fill"></i></button>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label class="">Confirmar Contraseña</label>
+                        <div class="input-group">
+                            <input type="password" placeholder="Confirme su contraseña" class="form-control"
+                                id="confirmPassword" required oninput="soloPassword()">
+                            <button class="btn btn-outline-secondary" type="button" onclick="mostrarPassword()"><i
+                                    id="confirmPasswordIcono" class="bi bi-eye-fill"></i></button>
+                        </div>
+
+                    </div>
+                    <div class="mb-3">
+                        <button type="submit" class="btn-forms btn-select w-100">Registrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- FONT DE POPPER PARA BTNS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <!-- SCRIPT DE BOOSTRAP -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
+        integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
+        crossorigin="anonymous"></script>
+    <!-- SCRIPT DE  -->
+    <script>
+        //Funcion para cambiar formularios
+        mostrarLogin = () => {
+            const formLogin = document.getElementById('form-login');
+            const formRegister = document.getElementById('form-register');
+            const btnLogin = document.getElementById('btn-login');
+            const btnRegistro = document.getElementById('btn-registro');
+            formLogin.classList.remove('hidden');
+            formRegister.classList.add('hidden');
+            btnLogin.classList.add('btn-select');
+            btnRegistro.classList.remove('btn-select');
+
+        }
+        mostrarRegistro = () => {
+            const formLogin = document.getElementById('form-login');
+            const formRegister = document.getElementById('form-register');
+            const btnLogin = document.getElementById('btn-login');
+            const btnRegistro = document.getElementById('btn-registro');
+            formLogin.classList.add('hidden');
+            formRegister.classList.remove('hidden');
+            btnLogin.classList.remove('btn-select');
+            btnRegistro.classList.add('btn-select');
+
+        }
+        //Funcion para validar solo números
+        soloNum = () => {
+            const telefonoInput = document.getElementById('telefono');
+            telefonoInput.value = telefonoInput.value.replace(/[^0-9]/g, '');
+        };
+        //Funcion para validar la contraseña
+        soloPassword = () => {
+            const passwordInput = document.getElementById('password');
+            passwordInput.value = passwordInput.value.replace(/[^A-Za-z0-9!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~`]+$/, '');
+        };
+        //Funcion para verificar password
+        verificarPassword = () => {
+            const passwordInput = document.getElementById('password');
+            const confirmPasswordInput = document.getElementById('confirmPassword');
+            if (passwordInput.value !== confirmPasswordInput.value) {
+                //Hacer advertencia
+            } else {
+                //Dejar pasar
+            }
+        }
+        //Mostrar la password
+        mostrarPassword = () => {
+            const passwordInput = document.getElementById('password');
+            const confirmPasswordInput = document.getElementById('confirmPassword');
+            const passwordIcono = document.getElementById('passwordIcono');
+            const confirmPasswordIcono = document.getElementById('confirmPasswordIcono');
+
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                confirmPasswordInput.type = 'text';
+                passwordIcono.classList.remove('bi-eye-fill');
+                passwordIcono.classList.add('bi-eye-slash-fill');
+                confirmPasswordIcono.classList.remove('bi-eye-fill');
+                confirmPasswordIcono.classList.add('bi-eye-slash-fill');
+            } else {
+                passwordInput.type = 'password';
+                confirmPasswordInput.type = 'password';
+                passwordIcono.classList.remove('bi-eye-slash-fill');
+                passwordIcono.classList.add('bi-eye-fill');
+                confirmPasswordIcono.classList.remove('bi-eye-slash-fill');
+                confirmPasswordIcono.classList.add('bi-eye-fill');
+            }
+        }
+    </script>
+</body>
+
+</html>
