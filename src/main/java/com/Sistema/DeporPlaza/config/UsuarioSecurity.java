@@ -66,4 +66,5 @@ public class UsuarioSecurity implements UserDetails {
     public boolean isEnabled() {
         return usuario.getEstado().equalsIgnoreCase("ACTIVO");
     }
+
 }

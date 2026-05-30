@@ -26,4 +26,14 @@ public class LoginController {
         return "login";
     }
 
+    @GetMapping("/admin")
+    public String getMethodName() {
+        return "admin";
+    }
+
+    @GetMapping("/index")
+    public String getMethodName1() {
+        return "index";
+    }
+
 }

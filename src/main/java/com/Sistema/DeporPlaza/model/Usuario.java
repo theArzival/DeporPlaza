@@ -28,10 +28,10 @@ public class Usuario {
     private String email;
     private String password;
     private String telefono;
-    private String estado;
+    private String estado = "Activo";
     @DateTimeFormat(pattern = "dd/MM/yyyy")
     @Column(name = "fecha_registro")
-    private LocalDate fechaRegistro;
+    private LocalDate fechaRegistro = LocalDate.now();
     @ManyToOne
     @JoinColumn(name = "id_rol")
     private Rol rol;

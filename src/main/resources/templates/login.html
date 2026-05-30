@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>DeporPlaza Lima</title>
     <link rel="stylesheet" th:href="@{/css/LoginStyle.css}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
@@ -20,34 +20,36 @@
         <div class="col-6 p-0" id="form-side">
             <div id="form-contenedor">
                 <div class="d-flex justify-content-center mb-3 p-2" id="form-select">
-                    <button class="btn-forms btn-select w-50" onclick="mostrarLogin()" id="btn-login">Iniciar Sesión</button>
+                    <button class="btn-forms btn-select w-50" onclick="mostrarLogin()" id="btn-login">Iniciar
+                        Sesión</button>
                     <button class="btn-forms w-50" onclick="mostrarRegistro()" id="btn-registro">Registrarse</button>
                 </div>
                 <div id="form-text" class="mb-3 text-center">
                     <h2>Bienvenido a DeporPlaza Lima</h2>
                     <p>Ingrese sus credenciales correctamente o registre sus datos.</p>
                 </div>
-                <form class="mb-3 " th:action="@{/login}" th:object="${usuarioLogin}" method="post" id="form-login">
+                <form class="mb-3 form-animation" th:action="@{/login}" th:object="${usuarioLogin}" method="post"
+                    id="form-login">
                     <div class="mb-3">
-                        <label class="" >E-Mail</label>
+                        <label class="">E-Mail</label>
                         <input type="email" th:field="*{email}" placeholder="Ingrese su correo electrónico"
-                            class="form-control" id="email" required>
+                            class="form-control" id="emailLogin" required>
                     </div>
-                    
+
                     <div class="mb-4">
                         <label class="">Contraseña</label>
                         <div class="input-group">
                             <input type="password" th:field="*{password}" placeholder="Ingrese su contraseña"
-                                class="form-control" id="password" required oninput="soloPassword()">
+                                class="form-control" id="passwordLogin" required oninput="soloPassword(this)">
                             <button class="btn btn-outline-secondary" type="button" onclick="mostrarPassword()"><i
-                                    id="passwordIcono" class="bi bi-eye-fill"></i></button>
+                                    id="passwordIconoLogin" class="bi bi-eye-fill"></i></button>
                         </div>
                     </div>
                     <div class="mb-3">
                         <button type="submit" class="btn-forms btn-select w-100">Ingresar</button>
                     </div>
                 </form>
-                <form th:object="${usuarioRegister}" id="form-register" class="hidden">
+                <form th:object="${usuarioRegister}" id="form-register" class="form-animation hidden">
                     <input type="hidden" th:field="*{idUsuario}" id="idUsuario">
                     <div class="mb-3">
                         <label class="">DNI</label>
@@ -73,7 +75,7 @@
                     <div class="mb-3">
                         <label class="">E-Mail</label>
                         <input type="email" th:field="*{email}" placeholder="Ingrese su correo electrónico"
-                            class="form-control" id="email" required>
+                            class="form-control" id="emailRegister" required>
                     </div>
                     <div class="mb-3">
                         <label class="">Telefono</label>
@@ -84,23 +86,23 @@
                         <label class="">Contraseña</label>
                         <div class="input-group">
                             <input type="password" th:field="*{password}" placeholder="Ingrese su contraseña"
-                                class="form-control" id="password" required oninput="soloPassword()">
+                                class="form-control" id="passwordRegister" required oninput="soloPassword(this)">
                             <button class="btn btn-outline-secondary" type="button" onclick="mostrarPassword()"><i
-                                    id="passwordIcono" class="bi bi-eye-fill"></i></button>
+                                    id="passwordIconoRegister" class="bi bi-eye-fill"></i></button>
                         </div>
                     </div>
                     <div class="mb-4">
                         <label class="">Confirmar Contraseña</label>
                         <div class="input-group">
                             <input type="password" placeholder="Confirme su contraseña" class="form-control"
-                                id="confirmPassword" required oninput="soloPassword()">
+                                id="confirmPassword" required oninput="soloPassword(this)">
                             <button class="btn btn-outline-secondary" type="button" onclick="mostrarPassword()"><i
                                     id="confirmPasswordIcono" class="bi bi-eye-fill"></i></button>
                         </div>
 
                     </div>
                     <div class="mb-3">
-                        <button type="submit" class="btn-forms btn-select w-100">Registrar</button>
+                        <button id="btn-register" type="submit" class="btn-forms btn-select w-100">Registrar</button>
                     </div>
                 </form>
             </div>
@@ -117,8 +119,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
         integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
         crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- SCRIPT DE  -->
     <script>
+        const btnRegister = document.getElementById('btn-register');
+        const formRegister = document.getElementById('form-register');
         //Funcion para cambiar formularios
         mostrarLogin = () => {
             const formLogin = document.getElementById('form-login');
@@ -148,9 +153,11 @@
             telefonoInput.value = telefonoInput.value.replace(/[^0-9]/g, '');
         };
         //Funcion para validar la contraseña
-        soloPassword = () => {
-            const passwordInput = document.getElementById('password');
-            passwordInput.value = passwordInput.value.replace(/[^A-Za-z0-9!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~`]+$/, '');
+        soloPassword = (input) => {
+            input.value = input.value.replace(
+                /[^A-Za-z0-9!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~`]/g,
+                ''
+            );
         };
         //Funcion para verificar password
         verificarPassword = () => {
@@ -164,28 +171,102 @@
         }
         //Mostrar la password
         mostrarPassword = () => {
-            const passwordInput = document.getElementById('password');
+            const passwordLogin = document.getElementById('passwordLogin');
+            const passwordRegister = document.getElementById('passwordRegister');
             const confirmPasswordInput = document.getElementById('confirmPassword');
-            const passwordIcono = document.getElementById('passwordIcono');
+            const passwordIconoLogin = document.getElementById('passwordIconoLogin');
+            const passwordIconoRegister = document.getElementById('passwordIconoRegister');
             const confirmPasswordIcono = document.getElementById('confirmPasswordIcono');
 
-            if (passwordInput.type === 'password') {
-                passwordInput.type = 'text';
+            if (passwordRegister.type === 'password' || passwordLogin.type === 'password' || confirmPasswordInput.type === 'password') {
+                passwordRegister.type = 'text';
+                passwordLogin.type = 'text';
                 confirmPasswordInput.type = 'text';
-                passwordIcono.classList.remove('bi-eye-fill');
-                passwordIcono.classList.add('bi-eye-slash-fill');
+
+                passwordIconoLogin.classList.remove('bi-eye-fill');
+                passwordIconoLogin.classList.add('bi-eye-slash-fill');
+
+                passwordIconoRegister.classList.remove('bi-eye-fill');
+                passwordIconoRegister.classList.add('bi-eye-slash-fill');
                 confirmPasswordIcono.classList.remove('bi-eye-fill');
                 confirmPasswordIcono.classList.add('bi-eye-slash-fill');
             } else {
-                passwordInput.type = 'password';
+                passwordLogin.type = 'password';
+                passwordRegister.type = 'password';
                 confirmPasswordInput.type = 'password';
-                passwordIcono.classList.remove('bi-eye-slash-fill');
-                passwordIcono.classList.add('bi-eye-fill');
+                passwordIconoLogin.classList.remove('bi-eye-slash-fill');
+                passwordIconoLogin.classList.add('bi-eye-fill');
+
+                passwordIconoRegister.classList.remove('bi-eye-slash-fill');
+                passwordIconoRegister.classList.add('bi-eye-fill');
                 confirmPasswordIcono.classList.remove('bi-eye-slash-fill');
                 confirmPasswordIcono.classList.add('bi-eye-fill');
             }
         }
+        //Buscar dni
+        buscarDni = () => {
+            dniInput = document.getElementById('dni');
+            nombresInput = document.getElementById('nombres');
+            apellidosInput = document.getElementById('apellidos');
+            fetch("/buscarDni", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded"
+                },
+                body: "dni=" + dniInput.value
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.error) {
+                        console.error(data.error);
+                        Swal.fire({
+                            icon: "error",
+                            title: "Error",
+                            text: "DNI no encontrado"
+                        });
+                        nombresInput.value = "";
+                        apellidosInput.value = "";
+                    } else {
+                        nombresInput.value = data.nombres;
+                        apellidosInput.value = data.apellidos;
+                    }
+                })
+        }
+        formRegister.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const formDataRegister = new FormData(formRegister);
+            fetch("/registrar", {
+                method: "POST",
+
+                body: formDataRegister
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.error) {
+                        Swal.fire({
+                            icon: "error",
+                            title: "Error",
+                            text: data.error,
+                            heightAuto: false
+                        });
+                        formRegister.reset();
+                    } else {
+                        Swal.fire({
+                            icon: "success",
+                            title: "Registrado",
+                            text: data.success,
+                            heightAuto: false
+                        }).then(() => {
+                            mostrarLogin();
+                            formRegister.reset();
+                        })
+                    }
+                });
+        });
     </script>
+
+
+
 </body>
 
 </html>
