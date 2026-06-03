@@ -15,6 +15,10 @@ public class UsuarioSecurity implements UserDetails {
         this.usuario = usuario;
     }
 
+    public String getNombreCompleto() {
+        return usuario.getNombres() + ", " + usuario.getApellidos();
+    }
+
     public String getDniUsuario() {
         return usuario.getDni();
     }

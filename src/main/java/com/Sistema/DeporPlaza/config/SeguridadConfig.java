@@ -27,6 +27,7 @@ public class SeguridadConfig {
                                                                 "/error404/**",
                                                                 "/error500/**",
                                                                 "/",
+                                                                "/index/**",
                                                                 "/login/**",
                                                                 "/registrar/**",
                                                                 "/buscarDni/**")

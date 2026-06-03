@@ -1,11 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" th:href="@{/css/IndexStyle.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 </head>
+
 <body>
-        <p>Esto es mi index</p>
+    <header id="header">
+        <nav id="nav-bar">
+            <div id="left-bar">
+                <span>DEPORPLAZA LIMA</span>
+            </div>
+            <div id="center-bar">
+                <a class="btn-bar">INICIO</a>
+                <a class="btn-bar"> CAMPOS</a>
+                <a class="btn-bar">HORARIOS</a>
+                <a class="btn-bar btn-resaltado">RESERVA YA!</a>
+            </div>
+            <div id="right-bar">
+                <a th:if="${usuarioLogueado == null}" th:href="@{/login}" id="btn-login"
+                    class="btn-bar btn-resaltado">Ingresa Ya!</a>
+                <span th:if="${usuarioLogueado != null}" id="text-logueado"
+                    th:text="${usuarioLogueado.nombreCompleto}"></span>
+
+                <form th:if="${usuarioLogueado != null}" th:action="@{/logout}" id="logoutForm" method="post">
+                    <button id="dropbox-perfil" type="buttons" th:onclick="salir()">
+                        <i class="bi bi-file-person-fill"></i>
+                    </button>
+                </form>
+            </div>
+        </nav>
+    </header>
+    <main id="main">
+
+            <div id="banner" class="">
+                <span id="banner-title">
+                    Tu cancha ideal a un <span id="banner-highlight">clic</span> de distancia
+                </span>
+                <span id="banner-description">
+                    Encuentra y reserva los mejores espacios deportivos de la ciudad. Fútbol, Pádel, Tenis y más.
+                </span>
+            </div>
+            <div class="bg-white w-100" style="height: 100px;"></div>
+            
+        
+    </main>
+    <footer id="footer">
+        <div id="footer-content">
+            
+        </div>
+    </footer>
+    <!-- FONT DE POPPER PARA BTNS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <!-- SCRIPT DE BOOSTRAP -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
+        integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+
+        salir = () => {
+
+            Swal.fire({
+                title: "¿Estas seguro?",
+                text: "Cerraras la sesion actual.",
+                icon: "question",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Si, deseo salir"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    document.getElementById("logoutForm").submit();
+                }
+            });
+        }
+    </script>
 </body>
+
 </html>
