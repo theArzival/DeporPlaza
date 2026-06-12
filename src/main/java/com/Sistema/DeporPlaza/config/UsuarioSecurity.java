@@ -15,6 +15,10 @@ public class UsuarioSecurity implements UserDetails {
         this.usuario = usuario;
     }
 
+    public String getNombreCompleto() {
+        return usuario.getNombres() + ", " + usuario.getApellidos();
+    }
+
     public String getDniUsuario() {
         return usuario.getDni();
     }
@@ -66,4 +70,5 @@ public class UsuarioSecurity implements UserDetails {
     public boolean isEnabled() {
         return usuario.getEstado().equalsIgnoreCase("ACTIVO");
     }
+
 }

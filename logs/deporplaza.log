@@ -1,0 +1,42 @@
+2026-06-11T19:08:41.607-05:00  INFO 7712 --- [DeporPlaza] [restartedMain] c.S.DeporPlaza.DeporPlazaApplication     : Starting DeporPlazaApplication using Java 21.0.8 with PID 7712 (C:\Users\JOSE-PC\PROYECTOS SPRING\DeporPlaza V1\DeporPlaza\target\classes started by JOSE-PC in C:\Users\JOSE-PC\PROYECTOS SPRING\DeporPlaza V1\DeporPlaza)
+2026-06-11T19:08:41.607-05:00 DEBUG 7712 --- [DeporPlaza] [restartedMain] c.S.DeporPlaza.DeporPlazaApplication     : Running with Spring Boot v4.0.6, Spring v7.0.7
+2026-06-11T19:08:41.607-05:00  INFO 7712 --- [DeporPlaza] [restartedMain] c.S.DeporPlaza.DeporPlazaApplication     : No active profile set, falling back to 1 default profile: "default"
+2026-06-11T19:08:41.706-05:00  INFO 7712 --- [DeporPlaza] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-11T19:08:41.717-05:00  INFO 7712 --- [DeporPlaza] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 5 JPA repository interfaces.
+2026-06-11T19:08:41.763-05:00  INFO 7712 --- [DeporPlaza] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8803 (http)
+2026-06-11T19:08:41.764-05:00  INFO 7712 --- [DeporPlaza] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-11T19:08:41.764-05:00  INFO 7712 --- [DeporPlaza] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-06-11T19:08:41.778-05:00  INFO 7712 --- [DeporPlaza] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 169 ms
+2026-06-11T19:08:41.793-05:00  INFO 7712 --- [DeporPlaza] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-11T19:08:41.808-05:00  INFO 7712 --- [DeporPlaza] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-11T19:08:41.809-05:00  INFO 7712 --- [DeporPlaza] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-29 - Starting...
+2026-06-11T19:08:41.811-05:00  INFO 7712 --- [DeporPlaza] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-29 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4af0cd29
+2026-06-11T19:08:41.811-05:00  INFO 7712 --- [DeporPlaza] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-29 - Start completed.
+2026-06-11T19:08:41.812-05:00  WARN 7712 --- [DeporPlaza] [restartedMain] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-06-11T19:08:41.813-05:00  INFO 7712 --- [DeporPlaza] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/bd_deporplaza]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: bd_deporplaza/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-11T19:08:41.855-05:00  INFO 7712 --- [DeporPlaza] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-11T19:08:41.990-05:00  INFO 7712 --- [DeporPlaza] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-11T19:08:42.038-05:00  WARN 7712 --- [DeporPlaza] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-11T19:08:42.047-05:00  INFO 7712 --- [DeporPlaza] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name usuarioDetailsService
+2026-06-11T19:08:42.072-05:00  INFO 7712 --- [DeporPlaza] [restartedMain] o.s.b.w.a.WelcomePageHandlerMapping      : Adding welcome page template: index
+2026-06-11T19:08:42.109-05:00  INFO 7712 --- [DeporPlaza] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8803 (http) with context path '/'
+2026-06-11T19:08:42.110-05:00  INFO 7712 --- [DeporPlaza] [restartedMain] c.S.DeporPlaza.DeporPlazaApplication     : Started DeporPlazaApplication in 0.537 seconds (process running for 2990.535)
+2026-06-11T19:08:42.111-05:00  INFO 7712 --- [DeporPlaza] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-06-11T19:08:46.407-05:00  INFO 7712 --- [DeporPlaza] [http-nio-8803-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-11T19:08:46.407-05:00  INFO 7712 --- [DeporPlaza] [http-nio-8803-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-06-11T19:08:46.410-05:00  INFO 7712 --- [DeporPlaza] [http-nio-8803-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-06-11T19:09:06.820-05:00  WARN 7712 --- [DeporPlaza] [http-nio-8803-exec-8] c.S.DeporPlaza.service.UsuarioService    : Contraseña demasiado corta
+2026-06-11T19:09:22.963-05:00  INFO 7712 --- [DeporPlaza] [http-nio-8803-exec-6] c.S.DeporPlaza.service.UsuarioService    : Usuario registrado correctamente. Correo: japc24535@gmail.com
+2026-06-11T19:09:43.418-05:00  INFO 7712 --- [DeporPlaza] [http-nio-8803-exec-5] c.S.DeporPlaza.service.UsuarioService    : Buscando usuario con DNI: 71519607
+2026-06-11T19:09:43.439-05:00  INFO 7712 --- [DeporPlaza] [http-nio-8803-exec-5] c.S.DeporPlaza.service.ReservaService    : Reserva registrada correctamente. Usuario: 19, Campo: 1, Fecha: 2026-06-11

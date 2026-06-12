@@ -1,0 +1,362 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@primaryColor: #1e7c52;
+@tertiaryColor: #29A36C;
+@secondaryColor: #f8f9fa;
+@darkColor: #218356;
+@darkColor2: #0b5c36;
+
+@textColorDark2: #365e4b;
+@textColorDark: rgb(213, 224, 219);
+@textSize: 20px;
+
+// mixins
+.redondear(@radio: 16px) {
+    border-radius: @radio;
+}
+
+* {
+    font-family: 'Lato', sans-serif;
+}
+
+body {
+    margin: 0;
+
+}
+
+
+#header {
+    height: 80px;
+    background-color: @primaryColor;
+
+    display: flex;
+
+    #nav-bar {
+        color: @secondaryColor;
+        padding: 10px 20px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: auto;
+        font-size: @textSize;
+        font-weight: 900;
+        gap: 16px;
+
+        #left-bar {
+            flex: 1;
+            display: flex;
+            justify-content: baseline;
+            align-items: center;
+
+        }
+
+        #center-bar {
+
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            align-items: center;
+        }
+
+        #right-bar {
+            flex: 1;
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            gap: 16px;
+
+            #dropbox-perfil {
+                border: none;
+                background-color: @primaryColor;
+                .redondear(8px);
+                padding: 10px 10px;
+                transition:
+                    background-color 0.3s ease,
+                    transform 0.3s ease;
+                display: inline-block;
+                will-change: transform;
+
+                i {
+
+                    color: @secondaryColor;
+
+
+                }
+            }
+
+            #dropbox-perfil:hover {
+                background-color: @darkColor;
+                cursor: pointer;
+                transform: translateY(-2px);
+            }
+
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .btn-bar {
+            color: @secondaryColor;
+            padding: 12px 16px;
+            .redondear();
+            border: 3px solid @primaryColor;
+            transition:
+                background-color 0.3s ease,
+                transform 0.3s ease;
+        }
+
+        .btn-bar:hover {
+            background-color: @darkColor;
+            cursor: pointer;
+            transform: translateY(-2px);
+            border: 3px solid @secondaryColor;
+        }
+
+        .btn-resaltado {
+            background-color: @secondaryColor;
+            color: @darkColor;
+
+        }
+
+        .btn-resaltado:hover {
+            background-color: @darkColor;
+            color: @secondaryColor;
+            transition:
+                background-color 0.3s ease;
+        }
+    }
+}
+
+#main {
+    background-image: url('/img/campoDeportivo2.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    position: relative;
+
+    #banner {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+        color: @secondaryColor;
+        width: 100%;
+        padding: 120px 0;
+
+        #banner-title {
+            font-size: 60px;
+            font-weight: 900;
+            text-align: center;
+            text-shadow: 4px 4px 4px rgba(19, 18, 18, 0.849);
+
+            #banner-highlight {
+                color: @primaryColor;
+                display: inline-block;
+                transition:
+                    color 0.3s ease,
+                    transform 0.3s ease,
+                    scale 0.3s ease;
+            }
+
+            #banner-highlight:hover {
+                cursor: pointer;
+                transform: scale(1.1);
+            }
+        }
+
+        #banner-description {
+            font-size: 32px;
+            font-weight: 600;
+            text-align: center;
+            text-shadow: 4px 4px 4px rgba(19, 18, 18, 0.849);
+        }
+    }
+
+    .contenedor {
+        padding: 40px 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: @primaryColor;
+
+        .text-title {
+            font-size: 72px;
+            font-weight: 900;
+            color: @secondaryColor;
+            text-align: center;
+
+        }
+
+        .text-description {
+            font-size: 24px;
+            font-weight: 400;
+            color: @textColorDark;
+            text-align: center;
+            margin-top: 16px;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: stretch;
+            gap: 64px;
+            border: none;
+            margin-top: 40px;
+            background-color: transparent;
+
+            .cards {
+                p {
+                    margin: 0;
+                    padding: 0;
+                }
+
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                border: 6px solid @darkColor2;
+                .redondear(16px);
+
+                .card-head {
+                    background-color: @primaryColor;
+                    color: @secondaryColor;
+                    width: 100%;
+                    height: auto;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 20px;
+                    border-radius: 10px 10px 0 0;
+
+                    p {
+                        font-size: 32px;
+                        font-weight: 900;
+                        text-align: center;
+                    }
+                }
+
+                .card-body {
+                    background-color: @secondaryColor;
+                    width: 100%;
+                    height: auto;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                    border-radius: 0 0 16px 16px;
+                    padding: 20px 40px;
+
+                    i {
+                        color: @primaryColor;
+                        font-size: 48px;
+                        margin-bottom: 16px;
+
+                    }
+
+                    p {
+                        font-size: 24px;
+                        font-weight: 500;
+                        color: @textColorDark2;
+                        text-align: center;
+                    }
+                }
+
+                transition: all 0.3s ease-in-out;
+
+            }
+
+            .cards:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            }
+        }
+    }
+
+
+}
+
+#footer {
+    #footer-content {
+        background-color: @primaryColor;
+        color: @secondaryColor;
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: space-between;
+
+        #footer-left {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        #footer-center {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            justify-content: center;
+
+        }
+
+        #footer-right {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            justify-content: center;
+
+            a {
+                display: inline-block;
+                text-decoration: none;
+                color: @secondaryColor;
+                font-weight: 900;
+                transition: all 0.3s ease;
+
+            }
+
+            a:hover {
+                color: @tertiaryColor;
+                transform: translateY(-2px);
+            }
+
+        }
+
+        .footer-title {
+            font-size: @textSize;
+            font-weight: 900;
+        }
+
+        .footer-content {
+            font-size: @textSize;
+            font-weight: 400;
+            text-align: left;
+        }
+
+    }
+
+    #footer-copyright {
+        background-color: @tertiaryColor;
+        color: @secondaryColor;
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+
+        p {
+            font-size: 14px;
+            font-weight: 400;
+            margin: 0;
+        }
+    }
+}

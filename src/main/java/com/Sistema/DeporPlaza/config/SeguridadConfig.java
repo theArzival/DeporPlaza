@@ -1,5 +1,6 @@
 package com.Sistema.DeporPlaza.config;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -11,6 +12,9 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration
 @EnableWebSecurity
 public class SeguridadConfig {
+        @Autowired
+        private LoginSuccessHandler loginSuccessHandler;
+
         @Bean
         public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
                 return http
@@ -23,10 +27,13 @@ public class SeguridadConfig {
                                                                 "/error404/**",
                                                                 "/error500/**",
                                                                 "/",
-                                                                "/login/**")
+                                                                "/index/**",
+                                                                "/login/**",
+                                                                "/registrar/**",
+                                                                "/buscarDni/**")
                                                 .permitAll()
                                                 .requestMatchers("/admin/**").hasRole("ADMIN")
-                                                .anyRequest().hasRole("ADMIN"))
+                                                .anyRequest().authenticated())
                                 // Aca configuramos el form para el login, osea el login personalizado que
                                 // creamos login.html enmi caso
                                 .exceptionHandling(exception -> exception
@@ -35,7 +42,9 @@ public class SeguridadConfig {
                                                 // le damos el url
                                                 .loginPage("/login")
                                                 // Le decimos a donde nos dirige si esta bien
-                                                .defaultSuccessUrl("/inicio", true)
+                                                .successHandler(loginSuccessHandler)
+                                                .usernameParameter("email")
+                                                .passwordParameter("password")
                                                 // Esto dice que todos pueden ver esta pagina
                                                 .permitAll())
                                 .logout(logout -> logout.logoutSuccessUrl("/login?logout").permitAll())

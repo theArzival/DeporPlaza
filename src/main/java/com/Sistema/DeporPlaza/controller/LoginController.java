@@ -26,4 +26,9 @@ public class LoginController {
         return "login";
     }
 
+    @GetMapping({ "/index", "/" })
+    public String cargarIndex(Model modelo) {
+        return "index";
+    }
+
 }
