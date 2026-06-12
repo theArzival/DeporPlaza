@@ -26,11 +26,6 @@ public class LoginController {
         return "login";
     }
 
-    @GetMapping("/admin/dashboard")
-    public String cargarAdminDashboard(Model modelo) {
-        return "dashboard";
-    }
-
     @GetMapping({ "/index", "/" })
     public String cargarIndex(Model modelo) {
         return "index";

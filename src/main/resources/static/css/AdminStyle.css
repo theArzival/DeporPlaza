@@ -1,0 +1,262 @@
+@font-face {
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 100;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/lato/v25/S6u-w4BMUTPHjxsIPy-v.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/lato/v25/S6u_w4BMUTPHjxsI9w2PHA.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/lato/v25/S6u8w4BMUTPHjxswWw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/lato/v25/S6u_w4BMUTPHjxsI5wqPHA.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 900;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/lato/v25/S6u_w4BMUTPHjxsI3wiPHA.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/lato/v25/S6u8w4BMUTPHh30wWw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/lato/v25/S6u9w4BMUTPHh7USew8.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/lato/v25/S6uyw4BMUTPHvxk.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/lato/v25/S6u9w4BMUTPHh6UVew8.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/lato/v25/S6u9w4BMUTPHh50Xew8.ttf) format('truetype');
+}
+* {
+  font-family: 'Lato', sans-serif;
+}
+body {
+  margin: 0;
+}
+header {
+  width: 100%;
+  background-color: #29A36C;
+  color: #f8f9fa;
+  display: flex;
+  height: 60px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  border-bottom: #0b5c36 2px solid;
+}
+header p {
+  padding: 0;
+  margin: 0;
+  color: #f8f9fa;
+  font-size: 16px;
+  font-weight: 500;
+}
+header #header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+header #header-left i {
+  font-size: 16px;
+  -webkit-text-stroke: white 1px;
+}
+header #header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+header #header-right i {
+  font-size: 16px;
+  -webkit-text-stroke: white 1px;
+}
+header button {
+  background-color: transparent;
+  border: 2px solid transparent;
+  color: #f8f9fa;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+header button:hover {
+  border: 2px solid #29A36C;
+  background-color: #29A36C;
+}
+main {
+  display: flex;
+}
+main #aside {
+  width: 250px;
+  height: auto;
+  background-color: #1e7c52;
+  color: #f8f9fa;
+  transition: all 0.3s ease;
+}
+main #aside nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+main #aside nav .btn-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #1e7c52;
+  color: #f8f9fa;
+  text-decoration: none;
+  padding: 10px 20px;
+  width: 100%;
+  transition: all 0.3s ease;
+  height: auto;
+  gap: 10px;
+  border-bottom: #0b5c36 2px solid;
+}
+main #aside nav .btn-nav i {
+  font-size: 16px;
+  background-color: transparent;
+  border: 2px solid transparent;
+  color: #f8f9fa;
+  padding: 0 6px;
+}
+main #aside nav .btn-nav p {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-weight: 500;
+}
+main #aside nav .btn-nav-active {
+  background-color: #0b5c36;
+}
+main #aside nav .btn-nav:hover {
+  background-color: #0b5c36;
+  cursor: pointer;
+}
+main #aside.oculto {
+  width: 0;
+  overflow: hidden;
+}
+main section {
+  flex: 1;
+  width: 100%;
+  background-color: #f8f9fa;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+main section p {
+  margin: 0;
+  padding: 0;
+}
+main section .title-form {
+  font-weight: 900;
+  font-size: 24px;
+}
+main section .bloque {
+  border-radius: 8px;
+  box-shadow: 0 8px 20px -10px rgba(2, 12, 27, 0.18), 0 6px 12px -8px rgba(2, 12, 27, 0.12);
+  background-color: white;
+  border: 1px solid #0b5c36;
+  padding: 30px;
+  width: 100%;
+}
+main section .bloque .formulario {
+  display: grid;
+  row-gap: 30px;
+  column-gap: 30px;
+  grid-template-areas: "dni nombres campos precio" "fecha horario observaciones observaciones" "botones botones botones botones" "calendar calendar calendar calendar";
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.input-dni {
+  grid-area: dni;
+}
+.input-nombres {
+  grid-area: nombres;
+}
+.input-campo {
+  grid-area: campos;
+}
+.input-precio {
+  grid-area: precio;
+}
+.input-fecha {
+  grid-area: fecha;
+}
+.input-horario {
+  grid-area: horario;
+}
+.input-observaciones {
+  grid-area: observaciones;
+}
+.btn-contenedor {
+  grid-area: botones;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 30px;
+}
+.calendar-contenedor {
+  grid-area: calendar;
+}
+#calendar .fc-col-header-cell {
+  background-color: #198754;
+  vertical-align: middle;
+}
+#calendar a {
+  text-decoration: none;
+  color: white;
+  font-weight: 900;
+  text-transform: capitalize;
+}
+#calendar tr {
+  height: 40px;
+}
+#calendar .fc-event {
+  border-radius: 8px;
+  font-weight: bold;
+  border: none;
+  text-align: center;
+}

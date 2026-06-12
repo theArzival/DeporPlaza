@@ -3,7 +3,10 @@
 @tertiaryColor: #29A36C;
 @secondaryColor: #f8f9fa;
 @darkColor: #218356;
-@color2: #218356;
+@darkColor2: #0b5c36;
+
+@textColorDark2: #365e4b;
+@textColorDark: rgb(213, 224, 219);
 @textSize: 20px;
 
 // mixins
@@ -130,7 +133,7 @@ body {
     background-image: url('/img/campoDeportivo2.jpg');
     background-size: cover;
     background-position: center;
-    height: 100vh;
+    height: 100%;
     position: relative;
 
     #banner {
@@ -147,8 +150,8 @@ body {
             font-size: 60px;
             font-weight: 900;
             text-align: center;
-            text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
-            
+            text-shadow: 4px 4px 4px rgba(19, 18, 18, 0.849);
+
             #banner-highlight {
                 color: @primaryColor;
                 display: inline-block;
@@ -168,17 +171,192 @@ body {
             font-size: 32px;
             font-weight: 600;
             text-align: center;
-            text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+            text-shadow: 4px 4px 4px rgba(19, 18, 18, 0.849);
         }
     }
+
+    .contenedor {
+        padding: 40px 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: @primaryColor;
+
+        .text-title {
+            font-size: 72px;
+            font-weight: 900;
+            color: @secondaryColor;
+            text-align: center;
+
+        }
+
+        .text-description {
+            font-size: 24px;
+            font-weight: 400;
+            color: @textColorDark;
+            text-align: center;
+            margin-top: 16px;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: stretch;
+            gap: 64px;
+            border: none;
+            margin-top: 40px;
+            background-color: transparent;
+
+            .cards {
+                p {
+                    margin: 0;
+                    padding: 0;
+                }
+
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                border: 6px solid @darkColor2;
+                .redondear(16px);
+
+                .card-head {
+                    background-color: @primaryColor;
+                    color: @secondaryColor;
+                    width: 100%;
+                    height: auto;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 20px;
+                    border-radius: 10px 10px 0 0;
+
+                    p {
+                        font-size: 32px;
+                        font-weight: 900;
+                        text-align: center;
+                    }
+                }
+
+                .card-body {
+                    background-color: @secondaryColor;
+                    width: 100%;
+                    height: auto;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                    border-radius: 0 0 16px 16px;
+                    padding: 20px 40px;
+
+                    i {
+                        color: @primaryColor;
+                        font-size: 48px;
+                        margin-bottom: 16px;
+
+                    }
+
+                    p {
+                        font-size: 24px;
+                        font-weight: 500;
+                        color: @textColorDark2;
+                        text-align: center;
+                    }
+                }
+
+                transition: all 0.3s ease-in-out;
+
+            }
+
+            .cards:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            }
+        }
+    }
+
+
 }
+
 #footer {
     #footer-content {
         background-color: @primaryColor;
         color: @secondaryColor;
-        text-align: center;
-        padding: 20px 0;
         width: 100%;
-        height: 250px;
+        height: auto;
+        display: flex;
+        justify-content: space-between;
+
+        #footer-left {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        #footer-center {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            justify-content: center;
+
+        }
+
+        #footer-right {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            justify-content: center;
+
+            a {
+                display: inline-block;
+                text-decoration: none;
+                color: @secondaryColor;
+                font-weight: 900;
+                transition: all 0.3s ease;
+
+            }
+
+            a:hover {
+                color: @tertiaryColor;
+                transform: translateY(-2px);
+            }
+
+        }
+
+        .footer-title {
+            font-size: @textSize;
+            font-weight: 900;
+        }
+
+        .footer-content {
+            font-size: @textSize;
+            font-weight: 400;
+            text-align: left;
+        }
+
+    }
+
+    #footer-copyright {
+        background-color: @tertiaryColor;
+        color: @secondaryColor;
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+
+        p {
+            font-size: 14px;
+            font-weight: 400;
+            margin: 0;
+        }
     }
 }

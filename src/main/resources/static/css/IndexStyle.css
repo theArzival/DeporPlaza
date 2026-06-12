@@ -157,7 +157,7 @@ body {
   background-image: url('/img/campoDeportivo2.jpg');
   background-size: cover;
   background-position: center;
-  height: 100vh;
+  height: 100%;
   position: relative;
 }
 #main #banner {
@@ -174,7 +174,7 @@ body {
   font-size: 60px;
   font-weight: 900;
   text-align: center;
-  text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 4px 4px 4px rgba(19, 18, 18, 0.849);
 }
 #main #banner #banner-title #banner-highlight {
   color: #1e7c52;
@@ -189,13 +189,156 @@ body {
   font-size: 32px;
   font-weight: 600;
   text-align: center;
-  text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 4px 4px 4px rgba(19, 18, 18, 0.849);
+}
+#main .contenedor {
+  padding: 40px 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #1e7c52;
+}
+#main .contenedor .text-title {
+  font-size: 72px;
+  font-weight: 900;
+  color: #f8f9fa;
+  text-align: center;
+}
+#main .contenedor .text-description {
+  font-size: 24px;
+  font-weight: 400;
+  color: #d5e0db;
+  text-align: center;
+  margin-top: 16px;
+}
+#main .contenedor .card {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  gap: 64px;
+  border: none;
+  margin-top: 40px;
+  background-color: transparent;
+}
+#main .contenedor .card .cards {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 6px solid #0b5c36;
+  border-radius: 16px;
+  transition: all 0.3s ease-in-out;
+}
+#main .contenedor .card .cards p {
+  margin: 0;
+  padding: 0;
+}
+#main .contenedor .card .cards .card-head {
+  background-color: #1e7c52;
+  color: #f8f9fa;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border-radius: 10px 10px 0 0;
+}
+#main .contenedor .card .cards .card-head p {
+  font-size: 32px;
+  font-weight: 900;
+  text-align: center;
+}
+#main .contenedor .card .cards .card-body {
+  background-color: #f8f9fa;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 0 0 16px 16px;
+  padding: 20px 40px;
+}
+#main .contenedor .card .cards .card-body i {
+  color: #1e7c52;
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+#main .contenedor .card .cards .card-body p {
+  font-size: 24px;
+  font-weight: 500;
+  color: #365e4b;
+  text-align: center;
+}
+#main .contenedor .card .cards:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 #footer #footer-content {
   background-color: #1e7c52;
   color: #f8f9fa;
-  text-align: center;
-  padding: 20px 0;
   width: 100%;
-  height: 250px;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+}
+#footer #footer-content #footer-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+}
+#footer #footer-content #footer-center {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  justify-content: center;
+}
+#footer #footer-content #footer-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  justify-content: center;
+}
+#footer #footer-content #footer-right a {
+  display: inline-block;
+  text-decoration: none;
+  color: #f8f9fa;
+  font-weight: 900;
+  transition: all 0.3s ease;
+}
+#footer #footer-content #footer-right a:hover {
+  color: #29A36C;
+  transform: translateY(-2px);
+}
+#footer #footer-content .footer-title {
+  font-size: 20px;
+  font-weight: 900;
+}
+#footer #footer-content .footer-content {
+  font-size: 20px;
+  font-weight: 400;
+  text-align: left;
+}
+#footer #footer-copyright {
+  background-color: #29A36C;
+  color: #f8f9fa;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+#footer #footer-copyright p {
+  font-size: 14px;
+  font-weight: 400;
+  margin: 0;
 }

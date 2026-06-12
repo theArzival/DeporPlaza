@@ -58,6 +58,7 @@ public class DniRestController {
              * }
              */
             Map<String, String> data = (Map<String, String>) response.getBody().get("data");
+            resultado.put("dni", data.get("numero"));
             resultado.put("nombres", data.get("nombres"));
             resultado.put("apellidos",
                     data.get("apellido_paterno") + " " + data.get("apellido_materno"));
