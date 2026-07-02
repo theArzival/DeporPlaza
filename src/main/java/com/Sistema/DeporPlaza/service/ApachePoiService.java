@@ -23,7 +23,7 @@ public class ApachePoiService {
         public byte[] generarExcel(List<Reserva> reservas) throws IOException {
                 XSSFWorkbook libro = new XSSFWorkbook();
                 XSSFSheet hoja = libro.createSheet("ReporteReservas");
-                // CREAMOS EL ESTILO DDEL HEAD
+                // CREAMOS EL ESTILO DEL HEAD
                 CellStyle estiloCabecera = libro.createCellStyle();
 
                 // ESTABLEZCO QUE COLOR Y QUE TODO EL FONDO SEA DE ESE COLOR Y ALINEACION X

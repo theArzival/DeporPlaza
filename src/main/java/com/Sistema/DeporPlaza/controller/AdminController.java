@@ -22,13 +22,18 @@ public class AdminController {
 
     @GetMapping("/admin/dashboard")
     public String cargarAdminDashboard(Model modelo) {
+        return "dashboard";
+    }
+
+    @GetMapping("/admin/reservas")
+    public String cargarGestionarReservas(Model modelo) {
         List<Horario> horarios = horarioService.listar();
         List<CampoDeportivo> campos = campoService.listar();
         modelo.addAttribute("reserva", new Reserva());
         modelo.addAttribute("horarios", horarios);
         modelo.addAttribute("campos", campos);
 
-        return "dashboard";
-    }
+        return "gestionarReservas";
 
+    }
 }

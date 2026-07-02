@@ -36,9 +36,11 @@ public class ReservaRestController {
     private ApachePoiService apachePoiService;
 
     @GetMapping("/reserva/eventos")
-    public List<EventoCalendarDTO> eventos() {
+    // El RESQUESTPARAM es lo que va despues de ../eventos?(REQUESTPARAM) va como
+    // idAlgo=algo
+    public List<EventoCalendarDTO> eventos(@RequestParam Integer idCampo) {
 
-        return reservaService.obtenerEventosCalendario();
+        return reservaService.obtenerEventosPorCampo(idCampo);
 
     }
 

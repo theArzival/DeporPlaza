@@ -107,4 +107,32 @@ public class ReservaService {
 
         return eventos;
     }
+
+    public List<EventoCalendarDTO> obtenerEventosPorCampo(Integer idCampo) {
+
+        List<Reserva> reservas = reservaRepository.findByCampoIdCampo(idCampo);
+
+        List<EventoCalendarDTO> eventos = new ArrayList<>();
+
+        for (Reserva reserva : reservas) {
+
+            String fecha = reserva.getFechaReserva().toString();
+
+            String inicio = fecha + "T" +
+                    reserva.getHorario().getHoraInicio();
+
+            String fin = fecha + "T" +
+                    reserva.getHorario().getHoraFin();
+
+            EventoCalendarDTO evento = new EventoCalendarDTO(
+                    reserva.getCampo().getNombreCampo(),
+                    inicio,
+                    fin,
+                    "#dc3545");
+
+            eventos.add(evento);
+        }
+
+        return eventos;
+    }
 }
