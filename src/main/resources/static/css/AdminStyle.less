@@ -21,7 +21,10 @@
 
 body {
     margin: 0;
-
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 
 }
 
@@ -85,6 +88,7 @@ header {
 
 main {
     display: flex;
+    flex: 1;
 
     #aside {
         width: 250px;
@@ -154,11 +158,12 @@ main {
 
     section {
         flex: 1;
+        display: flex;
+        flex-direction: column;
         width: 100%;
         background-color: @secondaryColor;
         padding: 30px;
-        display: flex;
-        flex-direction: column;
+
         gap: 30px;
 
         p {
@@ -178,13 +183,17 @@ main {
             border: 1px solid @darkColor2;
             padding: 30px;
             width: 100%;
+            flex: 1;
 
             .title-input {}
 
             .formulario {
                 display: grid;
-                row-gap: 30px;
-                column-gap: 30px;
+                gap: 30px;
+
+            }
+
+            #reservaForm {
                 grid-template-areas:
                     "dni nombres campos precio"
                     "fecha horario observaciones observaciones"
@@ -192,11 +201,53 @@ main {
                     "calendar calendar calendar calendar";
                 grid-template-columns: 1fr 1fr 1fr 1fr;
             }
+
+            #campoForm {
+                grid-template-areas:
+                    "nombreCampo precioCampo tipoCampo tipoCampo"
+                    "descripcion descripcion descripcion estado "
+                    "botones botones botones botones";
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+            }
+
+            #busquedaForm {
+                display: flex;
+                flex-direction: row;
+                //ALINEA SEGU NSU BORDE INFERIOR
+                align-items: flex-end;
+                gap: 30px;
+
+                .input-nombreBusqueda {
+                    flex: 1;
+                }
+
+                .contenedor-btn {
+                    display: flex;
+                    align-items: flex-end;
+                }
+
+                button {
+                    background-color: @primaryColor;
+                    border: 2px solid transparent;
+                    color: @secondaryColor;
+                    font-size: @textSize;
+                    cursor: pointer;
+                    .redondear(8px);
+                    transition: all 0.3s ease;
+                }
+
+                button:hover {
+                    border: 2px solid @tertiaryColor;
+                    background-color: @tertiaryColor;
+                    transform: translateY(-2px);
+                }
+            }
         }
     }
 
 }
 
+/*INPUT GRIDS PARA RESERVA FORM*/
 .input-dni {
     grid-area: dni;
 }
@@ -228,6 +279,31 @@ main {
 .input-observaciones {
     grid-area: observaciones;
 
+}
+
+/* INPUT GRIDS PARA CAMPO*/
+.input-nombreCampo {
+    grid-area: nombreCampo;
+}
+
+.input-precioCampo {
+    grid-area: precioCampo;
+}
+
+.input-tipoCampo {
+    grid-area: tipoCampo;
+}
+
+.input-descripcion {
+    grid-area: descripcion;
+}
+
+.input-estado {
+    grid-area: estado;
+}
+
+.btn-contenedor {
+    grid-area: botones;
 }
 
 .btn-contenedor {
@@ -267,4 +343,20 @@ main {
         border: none;
         text-align: center;
     }
+}
+
+.btn {
+    font-weight: bold;
+    color: white;
+}
+
+#btnShowTipoModal {
+    i {}
+}
+.btn-success{
+    background-color: @primaryColor;
+}
+.tabla-scroll{
+    max-height: 500px; 
+    overflow-y: auto;
 }

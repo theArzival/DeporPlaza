@@ -1,0 +1,20 @@
+<header th:fragment="header" >
+        <div id="header-left">
+            <button id="btn-menu">
+                <i class="bi bi-list"></i>
+            </button>
+            <p>Sistema DeporPlaza</p>
+
+        </div>
+        <div id="header-right">
+            <a th:if="${usuarioLogueado == null}" th:href="@{/login}" id="btn-login"
+                class="btn-bar btn-resaltado">Ingresa Ya!</a>
+            <p th:if="${usuarioLogueado != null}" id="text-logueado" th:text="${usuarioLogueado.nombreCompleto}"></p>
+
+            <form th:if="${usuarioLogueado != null}" th:action="@{/logout}" id="logoutForm" method="post">
+                <button id="dropbox-perfil" type="submit" th:onclick="salir()">
+                    <i class="bi bi-file-person-fill"></i>
+                </button>
+            </form>
+        </div>
+    </header>
