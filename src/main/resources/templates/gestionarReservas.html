@@ -9,60 +9,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.20/index.global.min.css" rel="stylesheet">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.20/index.global.min.css" rel="stylesheet"> -->
 
     <title>Gestionar Reservas - DeporPlaza</title>
 </head>
 
 <body>
-    <header>
-        <div id="header-left">
-            <button id="btn-menu">
-                <i class="bi bi-list"></i>
-            </button>
-            <p>Sistema DeporPlaza</p>
-
-        </div>
-        <div id="header-right">
-            <a th:if="${usuarioLogueado == null}" th:href="@{/login}" id="btn-login"
-                class="btn-bar btn-resaltado">Ingresa Ya!</a>
-            <p th:if="${usuarioLogueado != null}" id="text-logueado" th:text="${usuarioLogueado.nombreCompleto}"></p>
-
-            <form th:if="${usuarioLogueado != null}" th:action="@{/logout}" id="logoutForm" method="post">
-                <button id="dropbox-perfil" type="submit" th:onclick="salir()">
-                    <i class="bi bi-file-person-fill"></i>
-                </button>
-            </form>
-        </div>
-    </header>
+    <div th:replace="~{fragments/header::header}"></div>
     <main>
-        <aside id="aside" class="">
-            <nav>
-                <a th:href="@{/admin/dashboard}" class="btn-nav"><i class="bi bi-pie-chart-fill"></i>
-                    <p>Dashboard</p>
-                </a>
-                <a th:href="@{/admin/reservas}" class="btn-nav"><i class="bi bi-ticket-fill"></i>
-                    <p>Gestionar Reservas</p>
-                </a>
-                <a href="" class="btn-nav" th:href="@{/admin/reporteExcel}"><i class="bi bi-file-earmark-text-fill"></i>
-                    <p>Reportes</p>
-                </a>
-                <a href="" class="btn-nav"><i class="bi bi-stack"></i>
-                    <p>Gestionar Campos D. </p>
-                </a>
-
-                <a href="" class="btn-nav"><i class="bi bi-calendar-fill"></i>
-                    <p>Ver Calendario</p>
-                </a>
-                <a href="" class="btn-nav"><i class="bi bi-person-fill-gear"></i>
-                    <p>Gestionar Usuarios</p>
-                </a>
-                <a class="btn-nav"><i class="bi bi-box-arrow-left"></i>
-                    <p>Cerrar Sesion</p>
-
-                </a>
-            </nav>
-        </aside>
+        <div th:replace="~{fragments/aside::aside}"></div>
         <section>
             <div class="title-form">Registrar Reserva</div>
             <div class="bloque">
@@ -126,6 +81,7 @@
                 </form>
             </div>
         </section>
+        
     </main>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
@@ -137,11 +93,11 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.20/index.global.min.js"></script>
     <script th:inline="javascript">
-        const listaHorarios = [[${ horarios }]];
-        const listaCampos = [[${ campos }]];
+        //se pone en comentario para evitar errores, THYMELEAF  toma en cuenta lo que esta entre /**/
+        const listaHorarios = /*[[${horarios}]]*/[];
+        const listaCampos = /*[[${campos }]];*/[];
         let campoSeleccionado = null;
         let calendar
-        console.log(listaCampos);
     </script>
     <script>
         // CODIGO PARA GENERACION DE CALENDARIO
@@ -203,11 +159,11 @@
                         second: "2-digit",
                         hour12: false
                     });
+
                     const horarioSeleccionado = listaHorarios.find(h => h.horaInicio === horaInicio)
 
                     document.getElementById("fecha").value = fecha;
-                    document.getElementById("idHorario").value =
-                        horarioSeleccionado.idHorario;
+                    document.getElementById("idHorario").value = horarioSeleccionado.idHorario;
                     document.getElementById("horario").value = horarioSeleccionado.horaInicio.slice(0, 5) + " - " + horarioSeleccionado.horaFin.slice(0, 5)
                     calendar.getEvents().forEach(e => {
                         if (e.extendedProps.placeholder) {
@@ -252,7 +208,6 @@
 
             calendar.render();
         });
-
     </script>
     <script>
         //CODIGO PARA CERRAR SESION
@@ -376,6 +331,7 @@
                 });
 
         });
+
     </script>
 </body>
 

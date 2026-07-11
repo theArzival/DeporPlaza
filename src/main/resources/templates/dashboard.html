@@ -15,54 +15,9 @@
 </head>
 
 <body>
-    <header>
-        <div id="header-left">
-            <button id="btn-menu">
-                <i class="bi bi-list"></i>
-            </button>
-            <p>Sistema DeporPlaza</p>
-
-        </div>
-        <div id="header-right">
-            <a th:if="${usuarioLogueado == null}" th:href="@{/login}" id="btn-login"
-                class="btn-bar btn-resaltado">Ingresa Ya!</a>
-            <p th:if="${usuarioLogueado != null}" id="text-logueado" th:text="${usuarioLogueado.nombreCompleto}"></p>
-
-            <form th:if="${usuarioLogueado != null}" th:action="@{/logout}" id="logoutForm" method="post">
-                <button id="dropbox-perfil" type="submit" th:onclick="salir()">
-                    <i class="bi bi-file-person-fill"></i>
-                </button>
-            </form>
-        </div>
-    </header>
+    <div th:replace="~{fragments/header::header}"></div>
     <main>
-        <aside id="aside" class="">
-            <nav>
-                <a th:href="@{/admin/dashboard}" class="btn-nav"><i class="bi bi-pie-chart-fill"></i>
-                    <p>Dashboard</p>
-                </a>
-                <a th:href="@{/admin/reservas}" class="btn-nav"><i class="bi bi-ticket-fill"></i>
-                    <p>Gestionar Reservas</p>
-                </a>
-                <a href="" class="btn-nav" th:href="@{/admin/reporteExcel}"><i class="bi bi-file-earmark-text-fill"></i>
-                    <p>Reportes</p>
-                </a>
-                <a href="" class="btn-nav"><i class="bi bi-stack"></i>
-                    <p>Gestionar Campos D. </p>
-                </a>
-
-                <a href="" class="btn-nav"><i class="bi bi-calendar-fill"></i>
-                    <p>Ver Calendario</p>
-                </a>
-                <a href="" class="btn-nav"><i class="bi bi-person-fill-gear"></i>
-                    <p>Gestionar Usuarios</p>
-                </a>
-                <a class="btn-nav"><i class="bi bi-box-arrow-left"></i>
-                    <p>Cerrar Sesion</p>
-
-                </a>
-            </nav>
-        </aside>
+        <div th:replace="~{fragments/aside::aside}"></div>
         <section>
             <div class="title-form">Dashboard</div>
             <div class="bloque">
@@ -141,7 +96,30 @@
     </script>
 
     <script>
-
+        //CODIGO PARA CERRAR SESION
+        const formLogout = document.getElementById("logoutForm")
+        formLogout.addEventListener('submit', (e) => {
+            e.preventDefault();
+            Swal.fire({
+                title: "¿Estas seguro?",
+                text: "Cerraras la sesion actual.",
+                icon: "question",
+                showCancelButton: true,
+                confirmButtonColor: "#1e7c52",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Si, deseo salir"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    document.getElementById("logoutForm").submit();
+                }
+            });
+        })
+        //CODIGO PARA OCULTAR ASIDE
+        const btnMenu = document.getElementById("btn-menu");
+        const aside = document.getElementById("aside");
+        btnMenu.addEventListener('click', () => {
+            aside.classList.toggle("oculto");
+        });
     </script>
 </body>
 

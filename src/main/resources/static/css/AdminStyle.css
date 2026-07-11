@@ -73,6 +73,10 @@
 }
 body {
   margin: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 header {
   width: 100%;
@@ -125,6 +129,7 @@ header button:hover {
 }
 main {
   display: flex;
+  flex: 1;
 }
 main #aside {
   width: 250px;
@@ -180,11 +185,11 @@ main #aside.oculto {
 }
 main section {
   flex: 1;
+  display: flex;
+  flex-direction: column;
   width: 100%;
   background-color: #f8f9fa;
   padding: 30px;
-  display: flex;
-  flex-direction: column;
   gap: 30px;
 }
 main section p {
@@ -202,14 +207,48 @@ main section .bloque {
   border: 1px solid #0b5c36;
   padding: 30px;
   width: 100%;
+  flex: 1;
 }
 main section .bloque .formulario {
   display: grid;
-  row-gap: 30px;
-  column-gap: 30px;
+  gap: 30px;
+}
+main section .bloque #reservaForm {
   grid-template-areas: "dni nombres campos precio" "fecha horario observaciones observaciones" "botones botones botones botones" "calendar calendar calendar calendar";
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
+main section .bloque #campoForm {
+  grid-template-areas: "nombreCampo precioCampo tipoCampo tipoCampo" "descripcion descripcion descripcion estado " "botones botones botones botones";
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+main section .bloque #busquedaForm {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 30px;
+}
+main section .bloque #busquedaForm .input-nombreBusqueda {
+  flex: 1;
+}
+main section .bloque #busquedaForm .contenedor-btn {
+  display: flex;
+  align-items: flex-end;
+}
+main section .bloque #busquedaForm button {
+  background-color: #1e7c52;
+  border: 2px solid transparent;
+  color: #f8f9fa;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+main section .bloque #busquedaForm button:hover {
+  border: 2px solid #29A36C;
+  background-color: #29A36C;
+  transform: translateY(-2px);
+}
+/*INPUT GRIDS PARA RESERVA FORM*/
 .input-dni {
   grid-area: dni;
 }
@@ -230,6 +269,25 @@ main section .bloque .formulario {
 }
 .input-observaciones {
   grid-area: observaciones;
+}
+/* INPUT GRIDS PARA CAMPO*/
+.input-nombreCampo {
+  grid-area: nombreCampo;
+}
+.input-precioCampo {
+  grid-area: precioCampo;
+}
+.input-tipoCampo {
+  grid-area: tipoCampo;
+}
+.input-descripcion {
+  grid-area: descripcion;
+}
+.input-estado {
+  grid-area: estado;
+}
+.btn-contenedor {
+  grid-area: botones;
 }
 .btn-contenedor {
   grid-area: botones;
@@ -259,4 +317,15 @@ main section .bloque .formulario {
   font-weight: bold;
   border: none;
   text-align: center;
+}
+.btn {
+  font-weight: bold;
+  color: white;
+}
+.btn-success {
+  background-color: #1e7c52;
+}
+.tabla-scroll {
+  max-height: 500px;
+  overflow-y: auto;
 }
