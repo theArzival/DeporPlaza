@@ -185,8 +185,6 @@ main {
             width: 100%;
             flex: 1;
 
-            .title-input {}
-
             .formulario {
                 display: grid;
                 gap: 30px;
@@ -209,6 +207,53 @@ main {
                     "botones botones botones botones";
                 grid-template-columns: 1fr 1fr 1fr 1fr;
             }
+
+            #usuarioForm {
+                grid-template-areas:
+                    "dni nombres apellidos email"
+                    "telefono estado password passwordC"
+                    "rol botones botones botones";
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+
+
+                .input-dni {
+                    grid-area: dni;
+                }
+
+                .input-nombres {
+                    grid-area: nombres;
+
+                }
+
+                .input-apellidos {
+                    grid-area: apellidos;
+                }
+
+                .input-correo {
+                    grid-area: email;
+                }
+
+                .input-password {
+                    grid-area: password;
+                }
+
+                .input-passwordC {
+                    grid-area: passwordC;
+                }
+
+                .input-telefono {
+                    grid-area: telefono;
+                }
+
+                .input-estado {
+                    grid-area: estado;
+                }
+                .input-rol{
+                    grid-area: rol;
+                }
+            }
+
+
 
             #busquedaForm {
                 display: flex;
@@ -244,8 +289,8 @@ main {
             }
         }
     }
-
 }
+
 
 /*INPUT GRIDS PARA RESERVA FORM*/
 .input-dni {
@@ -302,15 +347,12 @@ main {
     grid-area: estado;
 }
 
-.btn-contenedor {
-    grid-area: botones;
-}
 
 .btn-contenedor {
     grid-area: botones;
     display: flex;
     justify-content: end;
-    align-items: center;
+    align-items: flex-end;
     gap: 30px;
 }
 
@@ -353,10 +395,16 @@ main {
 #btnShowTipoModal {
     i {}
 }
-.btn-success{
+
+.btn-success {
     background-color: @primaryColor;
 }
-.tabla-scroll{
-    max-height: 500px; 
+
+.tabla-scroll {
+    max-height: 500px;
     overflow-y: auto;
+}
+
+.btnGroup {
+    color: #365e4b;
 }

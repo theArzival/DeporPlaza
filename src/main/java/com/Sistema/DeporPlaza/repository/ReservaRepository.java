@@ -12,4 +12,6 @@ public interface ReservaRepository extends JpaRepository<Reserva, Integer> {
     List<Reserva> findByCampoIdCampo(Integer idCampo);
 
     boolean existsByCampoIdCampo(Integer idCampo);
+
+    boolean existsByUsuarioIdUsuario(Integer idUsuario);
 }

@@ -7,25 +7,64 @@ import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.Sistema.DeporPlaza.model.Rol;
 import com.Sistema.DeporPlaza.model.Usuario;
+import com.Sistema.DeporPlaza.repository.ReservaRepository;
 import com.Sistema.DeporPlaza.repository.UsuarioRepository;
 
 @Service
 public class UsuarioService {
+    private final PasswordEncoder passwordEncoder;
     @Autowired
     private UsuarioRepository repo;
+
+    @Autowired
+    private ReservaRepository reservaRepository;
+    @Autowired
+    private RolService rolService;
     private static final Logger log = LoggerFactory.getLogger(UsuarioService.class);
+
+    UsuarioService(PasswordEncoder passwordEncoder) {
+        this.passwordEncoder = passwordEncoder;
+    }
 
     public List<Usuario> listar() {
         return repo.findAll();
     }
 
-    public void guardar(Usuario usuario) {
+    public void guardarAdmin(Usuario usuario, Integer idRol) {
+        Rol rol = rolService.buscarById(idRol);
+        usuario.setRol(rol);
+        if (usuario.getIdUsuario() == null) {
+            validar(usuario);
 
+            usuario.setPassword(passwordEncoder.encode(usuario.getPassword()));
+            repo.save(usuario);
+            log.info("Usuario registrado por Admin correctamente. Correo: {}", usuario.getEmail());
+
+        } else {
+            validar(usuario);
+            Usuario usuarioBd = buscarById(usuario.getIdUsuario());
+            usuarioBd.setDni(usuario.getDni());
+            usuarioBd.setNombres(usuario.getNombres());
+            usuarioBd.setApellidos(usuario.getApellidos());
+            usuarioBd.setEmail(usuario.getEmail());
+            usuarioBd.setTelefono(usuario.getTelefono());
+            usuarioBd.setEstado(usuario.getEstado());
+            usuarioBd.setRol(usuario.getRol());
+            log.info("Usuario registrado por Admin correctamente. Correo: {}", usuario.getEmail());
+
+            repo.save(usuarioBd);
+        }
+
+    }
+
+    public void guardarUser(Usuario usuario) {
         repo.save(usuario);
-        log.info("Usuario registrado correctamente. Correo: {}", usuario.getEmail());
+        log.info("Usuario auto registrado correctamente. Correo: {}", usuario.getEmail());
     }
 
     public void eliminar(Integer idUsuario) {
@@ -37,8 +76,23 @@ public class UsuarioService {
         return repo.findById(idUsuario).orElse(null);
     }
 
+    public void existsByDni(String dni) {
+        log.info("Buscando existencia de usuario con DNI: {}", dni);
+        if (repo.existsByDni(dni)) {
+            throw new IllegalArgumentException("El DNI ya se encuentra registrado.");
+        }
+    }
+
+    public void existsByEmail(String correo) {
+        if (repo.existsByEmail(correo)) {
+            throw new IllegalArgumentException("El correo ya se encuentra registrado.");
+
+        }
+    }
+
     public Usuario buscarByDni(String dni) {
-        log.info("Buscando usuario con DNI: {}", dni);
+        log.info("Buscando usuario con dni: {}", dni);
+
         return repo.findByDni(dni);
     }
 
@@ -85,8 +139,7 @@ public class UsuarioService {
             throw new IllegalArgumentException("El correo es obligatorio");
         }
 
-        if (!StringUtils.contains(usuario.getEmail(), "@")) {
-            log.warn("Correo inválido: {}", usuario.getEmail());
+        if (!usuario.getEmail().matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$")) {
             throw new IllegalArgumentException("Correo electrónico inválido");
         }
 
@@ -100,14 +153,26 @@ public class UsuarioService {
             throw new IllegalArgumentException("El teléfono solo debe contener números");
         }
 
-        if (StringUtils.isBlank(usuario.getPassword())) {
-            log.warn("Contraseña vacía");
-            throw new IllegalArgumentException("La contraseña es obligatoria");
-        }
+        if (usuario.getIdUsuario() == null) {
+            if (StringUtils.isBlank(usuario.getPassword())) {
+                log.warn("Contraseña vacía");
+                throw new IllegalArgumentException("La contraseña es obligatoria");
+            }
 
-        if (StringUtils.length(usuario.getPassword()) < 8) {
-            log.warn("Contraseña demasiado corta");
-            throw new IllegalArgumentException("La contraseña debe tener al menos 8 caracteres");
+            if (StringUtils.length(usuario.getPassword()) < 8) {
+                log.warn("Contraseña demasiado corta");
+                throw new IllegalArgumentException("La contraseña debe tener al menos 8 caracteres");
+            }
+        }
+    }
+
+    public void validarExistencia(Integer idUsuario) {
+        boolean usuarioExiste = reservaRepository.existsByUsuarioIdUsuario(idUsuario);
+
+        if (usuarioExiste) {
+            log.error("Se intento un usuario con reservas registradas. Id del Usuario: " + idUsuario);
+            throw new IllegalArgumentException(
+                    "No se puede eliminar este usuario. Se encuentra relacionado con una o mas reservas.");
         }
     }
 

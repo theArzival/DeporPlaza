@@ -142,3 +142,16 @@ body {
   position: absolute;
   pointer-events: none;
 }
+a {
+  font-size: 16px;
+  font-weight: bold;
+  color: #29A36C;
+  background-color: transparent;
+  padding: 8px 12px;
+  border-radius: 10px;
+  transition: all 0.33s ease-in;
+}
+a:hover {
+  background-color: #29A36C;
+  color: white;
+}

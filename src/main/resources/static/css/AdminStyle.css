@@ -221,6 +221,37 @@ main section .bloque #campoForm {
   grid-template-areas: "nombreCampo precioCampo tipoCampo tipoCampo" "descripcion descripcion descripcion estado " "botones botones botones botones";
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
+main section .bloque #usuarioForm {
+  grid-template-areas: "dni nombres apellidos email" "telefono estado password passwordC" "rol botones botones botones";
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+main section .bloque #usuarioForm .input-dni {
+  grid-area: dni;
+}
+main section .bloque #usuarioForm .input-nombres {
+  grid-area: nombres;
+}
+main section .bloque #usuarioForm .input-apellidos {
+  grid-area: apellidos;
+}
+main section .bloque #usuarioForm .input-correo {
+  grid-area: email;
+}
+main section .bloque #usuarioForm .input-password {
+  grid-area: password;
+}
+main section .bloque #usuarioForm .input-passwordC {
+  grid-area: passwordC;
+}
+main section .bloque #usuarioForm .input-telefono {
+  grid-area: telefono;
+}
+main section .bloque #usuarioForm .input-estado {
+  grid-area: estado;
+}
+main section .bloque #usuarioForm .input-rol {
+  grid-area: rol;
+}
 main section .bloque #busquedaForm {
   display: flex;
   flex-direction: row;
@@ -288,12 +319,9 @@ main section .bloque #busquedaForm button:hover {
 }
 .btn-contenedor {
   grid-area: botones;
-}
-.btn-contenedor {
-  grid-area: botones;
   display: flex;
   justify-content: end;
-  align-items: center;
+  align-items: flex-end;
   gap: 30px;
 }
 .calendar-contenedor {
@@ -328,4 +356,7 @@ main section .bloque #busquedaForm button:hover {
 .tabla-scroll {
   max-height: 500px;
   overflow-y: auto;
+}
+.btnGroup {
+  color: #365e4b;
 }

@@ -5,12 +5,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>DeporPlaza Lima</title>
-    <link rel="stylesheet" th:href="@{/css/LoginStyle.css}">
-    <link rel="stylesheet" th:href="@{/css/style.css}">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-
+    <link rel="stylesheet" th:href="@{/css/LoginStyle.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 
 <body>
@@ -106,11 +106,14 @@
                         <button id="btn-register" type="submit" class="btn-forms btn-select w-100">Registrar</button>
                     </div>
                 </form>
+                <div class="align-items-center justify-content-center d-flex">
+                    <a th:href="@{/index}" class="text-decoration-none ">Página Principal</a>
+
+                </div>
+
             </div>
         </div>
     </div>
-
-
 
     <!-- FONT DE POPPER PARA BTNS -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
@@ -161,15 +164,7 @@
             );
         };
         //Funcion para verificar password
-        verificarPassword = () => {
-            const passwordInput = document.getElementById('password');
-            const confirmPasswordInput = document.getElementById('confirmPassword');
-            if (passwordInput.value !== confirmPasswordInput.value) {
-                //Hacer advertencia
-            } else {
-                //Dejar pasar
-            }
-        }
+
         //Mostrar la password
         mostrarPassword = () => {
             const passwordLogin = document.getElementById('passwordLogin');
@@ -220,22 +215,63 @@
                 .then(data => {
                     if (data.error) {
                         console.error(data.error);
+                        console.error(data.error);
                         Swal.fire({
                             icon: "error",
                             title: "Error",
-                            text: "DNI no encontrado"
+                            text: data.error
                         });
                         nombresInput.value = "";
                         apellidosInput.value = "";
+                        dniInput.value = ""
                     } else {
                         nombresInput.value = data.nombres;
                         apellidosInput.value = data.apellidos;
                     }
                 })
-        }
+        };
+        const inputCorreo = document.getElementById("emailRegister");
+
+        inputCorreo.addEventListener("blur", () => {
+            const correo = inputCorreo.value;
+            fetch(`/buscarEmail?correo=${correo}`, {
+                method: 'GET'
+            })
+                .then(response => response.json())
+                .then(data => {
+
+                    if (data.error) {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Error',
+                            text: data.error
+                        });
+                        inputCorreo.value = "";
+                    }
+
+                })
+                .catch(error => {
+
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error del servidor',
+                        text: error
+                    });
+
+                });
+
+        });
         formRegister.addEventListener('submit', (e) => {
             e.preventDefault();
-            const formDataRegister = new FormData(formRegister);
+            const passwordInput = document.getElementById('passwordRegister');
+            const confirmPasswordInput = document.getElementById('confirmPassword');
+            if (passwordInput.value !== confirmPasswordInput.value) {
+                Swal.fire({
+                    icon: "warning",
+                    title: "Las Contraseñas no coinciden",
+                });
+                return;
+            } const formDataRegister = new FormData(formRegister);
             fetch("/registrar", {
                 method: "POST",
 

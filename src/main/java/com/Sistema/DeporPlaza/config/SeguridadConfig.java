@@ -30,7 +30,8 @@ public class SeguridadConfig {
                                                                 "/index/**",
                                                                 "/login/**",
                                                                 "/registrar/**",
-                                                                "/buscarDni/**")
+                                                                "/buscarDni/**",
+                                                                "/buscarEmail/**")
                                                 .permitAll()
                                                 .requestMatchers("/admin/**").hasRole("ADMIN")
                                                 .anyRequest().authenticated())

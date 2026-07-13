@@ -10,10 +10,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import com.Sistema.DeporPlaza.model.CampoDeportivo;
 import com.Sistema.DeporPlaza.model.Horario;
 import com.Sistema.DeporPlaza.model.Reserva;
+import com.Sistema.DeporPlaza.model.Rol;
 import com.Sistema.DeporPlaza.model.TipoCampo;
+import com.Sistema.DeporPlaza.model.Usuario;
 import com.Sistema.DeporPlaza.service.CampoService;
 import com.Sistema.DeporPlaza.service.HorarioService;
+import com.Sistema.DeporPlaza.service.RolService;
 import com.Sistema.DeporPlaza.service.TipoCampoService;
+import com.Sistema.DeporPlaza.service.UsuarioService;
 
 @Controller
 public class AdminController {
@@ -23,6 +27,10 @@ public class AdminController {
     CampoService campoService;
     @Autowired
     TipoCampoService tipoCampoService;
+    @Autowired
+    UsuarioService usuarioService;
+    @Autowired
+    RolService rolService;
 
     @GetMapping("/admin/dashboard")
     public String cargarAdminDashboard(Model modelo) {
@@ -54,4 +62,15 @@ public class AdminController {
         modelo.addAttribute("campos", campos);
         return "gestionarCamposD";
     }
+
+    @GetMapping("/admin/gestionarUsuarios")
+    public String cargarGestionarUsuarios(Model modelo) {
+        List<Usuario> usuarios = usuarioService.listar();
+        List<Rol> roles = rolService.listar();
+        modelo.addAttribute("usuario", new Usuario());
+        modelo.addAttribute("usuarios", usuarios);
+        modelo.addAttribute("roles", roles);
+        return "gestionarUsuarios";
+    }
+
 }

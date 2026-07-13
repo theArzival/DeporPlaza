@@ -28,7 +28,7 @@ public class Usuario {
     private String email;
     private String password;
     private String telefono;
-    private String estado = "Activo";
+    private String estado;
     @DateTimeFormat(pattern = "dd/MM/yyyy")
     @Column(name = "fecha_registro")
     private LocalDate fechaRegistro = LocalDate.now();

@@ -46,7 +46,7 @@ public class campoSpecification implements Specification<CampoDeportivo> {
         if (StringUtils.hasText(nombreCampo)) {
             Expression<String> nombreCampoToLowerCase = criteriaBuilder.lower(root.get("nombreCampo"));
             Predicate nombreCampoLikePredicate = criteriaBuilder.like(nombreCampoToLowerCase,
-                    "%".concat(nombreCampo).concat("%"));
+                    "%".concat(nombreCampo.toLowerCase()).concat("%"));
             predicates.add(nombreCampoLikePredicate);
         }
         if (precioHoraMin != null && !precioHoraMin.equals(BigDecimal.ZERO)) {
