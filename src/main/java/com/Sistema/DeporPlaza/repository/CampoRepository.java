@@ -14,4 +14,5 @@ public interface CampoRepository
     List<CampoDeportivo> findAll();
 
     boolean existsByTipoCampoIdTipo(Integer idTipo);
+
 }

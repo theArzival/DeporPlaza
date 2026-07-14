@@ -21,8 +21,25 @@ public class ReservaService {
     private ReservaRepository reservaRepository;
     private static final Logger log = LoggerFactory.getLogger(ReservaService.class);
 
+    public Long contar() {
+        return reservaRepository.count();
+    }
+
     public List<Reserva> listar() {
         return reservaRepository.findAll();
+    }
+
+    public List<Reserva> ultimas5Reservas() {
+        return reservaRepository.findTop5ByOrderByIdReservaDesc();
+
+    }
+
+    public List<Object[]> obtenerReservasPorMes() {
+        return reservaRepository.reservasPorMes();
+    }
+
+    public List<Object[]> obtenerReservasPorTipo() {
+        return reservaRepository.reservasPorTipo();
     }
 
     public void guardar(Reserva reserva) {

@@ -15,6 +15,7 @@ import com.Sistema.DeporPlaza.model.TipoCampo;
 import com.Sistema.DeporPlaza.model.Usuario;
 import com.Sistema.DeporPlaza.service.CampoService;
 import com.Sistema.DeporPlaza.service.HorarioService;
+import com.Sistema.DeporPlaza.service.ReservaService;
 import com.Sistema.DeporPlaza.service.RolService;
 import com.Sistema.DeporPlaza.service.TipoCampoService;
 import com.Sistema.DeporPlaza.service.UsuarioService;
@@ -30,10 +31,28 @@ public class AdminController {
     @Autowired
     UsuarioService usuarioService;
     @Autowired
+    ReservaService reservaService;
+    @Autowired
     RolService rolService;
 
     @GetMapping("/admin/dashboard")
     public String cargarAdminDashboard(Model modelo) {
+        modelo.addAttribute("totalUsuarios",
+                usuarioService.contar());
+
+        modelo.addAttribute("totalCampos",
+                campoService.contar());
+
+        modelo.addAttribute("totalReservas",
+                reservaService.contar());
+        List<Reserva> ultimasReservas = reservaService.ultimas5Reservas();
+        modelo.addAttribute("ultimasReservas", ultimasReservas);
+        List<Object[]> reservasPorMes = reservaService.obtenerReservasPorMes();
+        modelo.addAttribute("reservasPorMes", reservasPorMes);
+        List<Object[]> reservasPorTipo = reservaService.obtenerReservasPorTipo();
+        modelo.addAttribute("reservasPorTipo", reservasPorTipo);
+        List<Object[]> usuariosPorMes = usuarioService.obtenerUsuariosPorMes();
+        modelo.addAttribute("usuariosPorMes", usuariosPorMes);
         return "dashboard";
     }
 
