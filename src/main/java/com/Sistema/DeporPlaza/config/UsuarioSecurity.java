@@ -35,6 +35,10 @@ public class UsuarioSecurity implements UserDetails {
         return usuario.getEmail();
     }
 
+    public String getRolUsuario() {
+        return usuario.getRol().getNombreRol();
+    }
+
     @Override
     public String getPassword() {
         return usuario.getPassword();

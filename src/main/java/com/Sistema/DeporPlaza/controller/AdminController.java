@@ -35,7 +35,7 @@ public class AdminController {
     @Autowired
     RolService rolService;
 
-    @GetMapping("/admin/dashboard")
+    @GetMapping({ "/admin/dashboard", "/admin" })
     public String cargarAdminDashboard(Model modelo) {
         modelo.addAttribute("totalUsuarios",
                 usuarioService.contar());

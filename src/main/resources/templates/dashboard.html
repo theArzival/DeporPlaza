@@ -208,9 +208,7 @@
 
     <script>
         //CODIGO PARA CERRAR SESION
-        const formLogout = document.getElementById("logoutForm")
-        formLogout.addEventListener('submit', (e) => {
-            e.preventDefault();
+        function salir() {
             Swal.fire({
                 title: "¿Estas seguro?",
                 text: "Cerraras la sesion actual.",
@@ -221,10 +219,11 @@
                 confirmButtonText: "Si, deseo salir"
             }).then((result) => {
                 if (result.isConfirmed) {
-                    document.getElementById("logoutForm").submit();
+                    fetch('/logout', { method: 'POST' });
+                    window.location.href = "/";
                 }
             });
-        })
+        };
         //CODIGO PARA OCULTAR ASIDE
         const btnMenu = document.getElementById("btn-menu");
         const aside = document.getElementById("aside");
@@ -334,10 +333,10 @@
                         backgroundColor: "#198754",
                         borderColor: "#146c43",
                         borderWidth: 1,
-                        
+
                     }]
                 },
-                
+
                 options: {
                     responsive: true,
                     plugins: {
@@ -352,7 +351,7 @@
                                 precision: 0
                             }
                         },
-                        
+
                     }
                 }
             });

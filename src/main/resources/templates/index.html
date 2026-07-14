@@ -30,11 +30,19 @@
                 <span th:if="${usuarioLogueado != null}" id="text-logueado"
                     th:text="${usuarioLogueado.nombreCompleto}"></span>
 
-                <form th:if="${usuarioLogueado != null}" th:action="@{/logout}" id="logoutForm" method="post">
-                    <button id="dropbox-perfil" type="submit" th:onclick="salir()">
-                        <i class="bi bi-file-person-fill"></i>
+                <form th:if="${usuarioLogueado != null}" th:action="@{/logout}" id="logoutForm" method="get">
+                    <button id="dropbox-perfil" type="submit">
+                        <i class="bi bi-power"></i>
+                        <!-- <i class="bi bi-file-person-fill"></i> esto es pa modificar usuario -->
                     </button>
                 </form>
+                <form th:if="${usuarioLogueado != null && usuarioLogueado.rolUsuario=='ADMIN'}" th:action="@{/admin}"
+                    id="adminForm" method="get">
+                    <button id="dropbox-perfil" type="submit">
+                        <i class="bi bi-shield-lock"></i>
+                    </button>
+                </form>
+
             </div>
         </nav>
     </header>
@@ -50,7 +58,8 @@
         </div>
         <div class="w-100 contenedor">
             <p class="text-title">Reserva tu cancha en minutos</p>
-            <p class="text-description">Olvídate de llamadas, mensajes y largas esperas. Encuentra y reserva tu espacio deportivo desde cualquier
+            <p class="text-description">Olvídate de llamadas, mensajes y largas esperas. Encuentra y reserva tu espacio
+                deportivo desde cualquier
                 dispositivo.</p>
             <div class="card">
                 <div class="cards">
@@ -135,25 +144,33 @@
         integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script th:inline="javascript">
+    </script>
     <script>
 
-        const formLogout = document.getElementById("logoutForm")
-        formLogout.addEventListener('submit', (e) => {
-            e.preventDefault();
-            Swal.fire({
-                title: "¿Estas seguro?",
-                text: "Cerraras la sesion actual.",
-                icon: "question",
-                showCancelButton: true,
-                confirmButtonColor: "#1e7c52",
-                cancelButtonColor: "#d33",
-                confirmButtonText: "Si, deseo salir"
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    document.getElementById("logoutForm").submit();
-                }
+        const formLogout = document.getElementById("logoutForm");
+
+        if (formLogout) {
+            formLogout.addEventListener("submit", (e) => {
+                e.preventDefault();
+
+                Swal.fire({
+                    title: "¿Estás seguro?",
+                    text: "Cerrarás la sesión actual.",
+                    icon: "question",
+                    showCancelButton: true,
+                    confirmButtonColor: "#1e7c52",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Sí, deseo salir"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        formLogout.submit();
+                        window.location.href = "/";
+
+                    }
+                });
             });
-        })
+        }
     </script>
 </body>
 
