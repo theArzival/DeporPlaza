@@ -35,6 +35,14 @@ public class UsuarioService {
         return repo.findAll();
     }
 
+    public List<Object[]> obtenerUsuariosPorMes() {
+        return repo.usuariosPorMes();
+    }
+
+    public Long contar() {
+        return repo.count();
+    }
+
     public void guardarAdmin(Usuario usuario, Integer idRol) {
         Rol rol = rolService.buscarById(idRol);
         usuario.setRol(rol);

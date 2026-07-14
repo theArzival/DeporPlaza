@@ -21,64 +21,174 @@
         <section>
             <div class="title-form">Dashboard</div>
             <div class="bloque">
-                <!-- <form th:object="${reserva}" class="formulario" id="reservaForm" method="post">
-                    <div class="mb-3 input-dni">
-                        <label class="form-label">DNI</label>
-                        <div class="input-group">
-                            <input type="text" placeholder="DNI" id="dni" class="form-control"
-                                oninput="this.value=this.value.replace(/[^0-9]/g,'')" maxlength="8" pattern="[0-9]{8}"
-                                required>
-                            <input type="hidden" id="dniCliente" name="dniCliente">
-                            <button class="btn btn-outline-secondary" type="button" onclick="buscarDni()"><i
-                                    class="bi bi-search"></i></button>
+                <div class="container-fluid py-4">
+
+                    <div class="mb-4">
+                        <h2 class="fw-bold"></h2>
+                        <p class="title-form">Bienvenido al panel administrativo de DeporPlaza.</p>
+                    </div>
+
+                    <!-- Tarjetas -->
+                    <div class="row g-3 mb-4">
+
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card shadow-sm border-0">
+                                <div class="card-body">
+
+                                    <small class="text-muted">
+                                        Usuarios
+                                    </small>
+
+                                    <h2 class="fw-bold mt-2" id="totalUsuarios">
+                                        0
+                                    </h2>
+
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="mb-3 input-nombres">
-                        <label class="form-label">Nombre Completo</label>
-                        <input type="text" placeholder="Ingrese su DNI" class="form-control" id="nombreCompleto"
-                            required readonly tabindex="-1">
-                    </div>
-                    <div class="mb-3 input-campo">
-                        <label class="form-label">Campo Deportivo</label>
-                        <select class="form-select" name="idCampo" id="campo" required>
-                            <option value="" disabled selected>---Elegir---</option>
-                            <option th:each="p:${campos}" th:value="${p.idCampo}" th:text="${p.nombreCampo}"
-                                th:data-precio="${p.precioHora}">
-                            </option>
-                        </select>
-                    </div>
-                    <div class="mb-3 input-precio">
-                        <label class="form-label">Precio por Hora</label>
-                        <input type="number" placeholder="Seleccione el Campo Deportivo" class="form-control"
-                            id="precio" required readonly tabindex="-1">
-                    </div>
-                    <div class="mb-3 input-fecha">
-                        <label class="form-label">Fecha de Reserva</label>
-                        <input type="text" th:field="*{fechaReserva}" class="form-control" id="fecha" required readonly
-                            tabindex="-1" placeholder="Seleccione una fecha...">
-                    </div>
-                    <div class="mb-3 input-horario">
-                        <label class="form-label">Horario Elegido</label>
-                        <input type="text" class="form-control" id="horario" required readonly tabindex="-1"
-                            placeholder="Seleccione un horario...">
-                        <input type="text" id="idHorario" name="idHorario" readonly hidden>
+
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card shadow-sm border-0">
+                                <div class="card-body">
+
+                                    <small class="text-muted">
+                                        Campos Deportivos
+                                    </small>
+
+                                    <h2 class="fw-bold mt-2" id="totalCampos">
+                                        0
+                                    </h2>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card shadow-sm border-0">
+                                <div class="card-body">
+
+                                    <small class="text-muted">
+                                        Reservas
+                                    </small>
+
+                                    <h2 class="fw-bold mt-2" id="totalReservas">
+                                        0
+                                    </h2>
+
+                                </div>
+                            </div>
+                        </div>
 
                     </div>
-                    <div class="mb-3 input-observaciones">
-                        <label class="form-label">Observaciones</label>
-                        <textarea th:field='*{observaciones}' class="form-control">
 
-                        </textarea>
+                    <!-- Graficos -->
+                    <div class="row g-4">
+
+                        <div class="col-lg-8">
+
+                            <div class="card shadow-sm border-0">
+
+                                <div class="card-header bg-white">
+                                    <h5 class="mb-0">
+                                        Reservas por Mes
+                                    </h5>
+                                </div>
+
+                                <div class="card-body">
+
+                                    <canvas id="graficoReservasMes"></canvas>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-lg-4">
+
+                            <div class="card shadow-sm border-0">
+
+                                <div class="card-header bg-white">
+                                    <h5 class="mb-0">
+                                        Reservas por Tipo
+                                    </h5>
+                                </div>
+
+                                <div class="card-body">
+
+                                    <canvas id="graficoTipos"></canvas>
+
+                                </div>
+
+                            </div>
+
+                        </div>
 
                     </div>
-                    <div class="mb-3 btn-contenedor">
-                        <button class="btn btn-success">Registrar</button>
-                        <button class="btn btn-danger">Limpiar</button>
+
+                    <div class="row mt-4 g-4">
+
+                        <div class="col-lg-8">
+
+                            <div class="card shadow-sm border-0">
+
+                                <div class="card-header bg-white">
+                                    <h5 class="mb-0">
+                                        Últimas Reservas
+                                    </h5>
+                                </div>
+
+                                <div class="card-body table-responsive">
+
+                                    <table class="table table-hover align-middle">
+
+                                        <thead>
+
+                                            <tr>
+                                                <th class="text-center">DNI Cliente</th>
+                                                <th class="text-center">Campo</th>
+                                                <th class="text-center">Fecha</th>
+                                                <th class="text-center">Hora</th>
+                                                <th class="text-center">Estado</th>
+                                            </tr>
+
+                                        </thead>
+
+                                        <tbody id="tablaUltimasReservas">
+
+                                        </tbody>
+
+                                    </table>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-lg-4">
+
+                            <div class="card shadow-sm border-0">
+
+                                <div class="card-header bg-white">
+                                    <h5 class="mb-0">
+                                        Usuarios por Mes
+                                    </h5>
+                                </div>
+
+                                <div class="card-body">
+
+                                    <canvas id="graficoUsuariosMes"></canvas>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
                     </div>
-                    <div class='calendar-contenedor'>
-                        <div id="calendar"></div>
-                    </div>
-                </form> -->
+
+                </div>
             </div>
         </section>
     </main>
@@ -91,6 +201,7 @@
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.20/index.global.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script th:inline="javascript">
 
     </script>
@@ -120,6 +231,203 @@
         btnMenu.addEventListener('click', () => {
             aside.classList.toggle("oculto");
         });
+    </script>
+    <script th:inline="javascript">
+        function cargarContadores() {
+            document.getElementById("totalUsuarios").textContent = /*[[${totalUsuarios}]]*/1;
+            document.getElementById("totalCampos").textContent = /*[[${totalCampos}]]*/0;
+            document.getElementById("totalReservas").textContent = /*[[${totalReservas}]]*/0;
+        }
+        function cargarTablaUltimasReservas() {
+            const body = document.getElementById("tablaUltimasReservas");
+            body.innerHTML = "";
+            html = ""
+            let ultimasReservas = /*[[${ultimasReservas}]]*/[];
+            ultimasReservas.forEach(item => {
+                html +=
+                    `
+                            <tr  class="align-middle">
+                                <td class="text-center">${item.usuario.dni}</td>
+                                <td class="text-center">${item.campo.nombreCampo}</td>
+                                <td class="text-center">${item.fechaReserva}</td>
+                                <td class="text-center">${item.horario.horaInicio}</td>
+                                <td class="text-center">${item.estado}</td>
+                            </tr>
+                                `;
+            });
+            body.innerHTML = html;
+        }
+        //CANVAS graficoReservasTipo
+        function cargarReservasPorTipo() {
+            let reservasPorTipo = /*[[${reservasPorTipo}]]*/[];
+            let labels = [];
+            let datos = [];
+            reservasPorTipo.forEach(item => {
+                labels.push(item[0]); // nombre del tipo
+                datos.push(item[1]);  // cantidad
+            })
+
+            const ctx = document.getElementById("graficoTipos");
+
+            new Chart(ctx, {
+                type: "doughnut",
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        data: datos,
+                        backgroundColor: [
+                            "#198754",
+                            "#0d6efd",
+                            "#ffc107",
+                            "#dc3545",
+                            "#6f42c1",
+                            "#20c997"
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: "bottom"
+                        }
+                    }
+                }
+            });
+        }
+        //CANVAS graficosUsuariosMes
+        function cargarUsuariosPorMes() {
+            let usuariosPorMes = /*[[${usuariosPorMes}]]*/[];
+            const nombresMeses = [
+                "",
+                "Enero",
+                "Febrero",
+                "Marzo",
+                "Abril",
+                "Mayo",
+                "Junio",
+                "Julio",
+                "Agosto",
+                "Septiembre",
+                "Octubre",
+                "Noviembre",
+                "Diciembre"
+            ];
+
+            let labels = [];
+            let datos = [];
+
+            usuariosPorMes.forEach(item => {
+                labels.push(nombresMeses[item[0]]);
+                datos.push(item[1]);
+            });
+
+            const ctx = document.getElementById("graficoUsuariosMes");
+
+            new Chart(ctx, {
+                type: "bar",
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: "Usuarios Registrados Por Mes",
+                        data: datos,
+                        backgroundColor: "#198754",
+                        borderColor: "#146c43",
+                        borderWidth: 1,
+                        
+                    }]
+                },
+                
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                precision: 0
+                            }
+                        },
+                        
+                    }
+                }
+            });
+
+        }
+        //CANVAS graficoReservasMes 
+        function cargarReservasPorMes() {
+            let reservasPorMes = /*[[${reservasPorMes}]]*/[];
+            const nombresMeses = [
+                "",
+                "Enero",
+                "Febrero",
+                "Marzo",
+                "Abril",
+                "Mayo",
+                "Junio",
+                "Julio",
+                "Agosto",
+                "Septiembre",
+                "Octubre",
+                "Noviembre",
+                "Diciembre"
+            ];
+
+            let labels = [];
+            let datos = [];
+
+            reservasPorMes.forEach(item => {
+                labels.push(nombresMeses[item[0]]);
+                datos.push(item[1]);
+            });
+
+            const ctx = document.getElementById("graficoReservasMes");
+
+            new Chart(ctx, {
+                type: "bar",
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: "Reservas Por Mes",
+                        data: datos,
+                        backgroundColor: "#198754",
+                        borderColor: "#146c43",
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                precision: 0
+                            }
+                        }
+                    }
+                }
+            });
+
+        }
+
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            cargarContadores();
+            cargarTablaUltimasReservas();
+            cargarReservasPorMes();
+            cargarReservasPorTipo();
+            cargarUsuariosPorMes();
+        })
     </script>
 </body>
 

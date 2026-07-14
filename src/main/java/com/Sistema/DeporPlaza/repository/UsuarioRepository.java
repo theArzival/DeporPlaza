@@ -23,4 +23,12 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Integer>, JpaS
     boolean existsByEmail(String correo);
 
     boolean existsByIdUsuario(Integer idUsuario);
+
+    @Query("""
+            SELECT MONTH(u.fechaRegistro), COUNT(u)
+            FROM Usuario u
+            GROUP BY MONTH(u.fechaRegistro)
+            ORDER BY MONTH(u.fechaRegistro)
+            """)
+    List<Object[]> usuariosPorMes();
 }

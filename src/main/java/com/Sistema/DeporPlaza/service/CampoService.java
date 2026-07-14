@@ -22,6 +22,10 @@ public class CampoService {
     private ReservaRepository reservaRepository;
     private static final Logger log = LoggerFactory.getLogger(ReservaService.class);
 
+    public Long contar() {
+        return repo.count();
+    }
+
     public List<CampoDeportivo> listar() {
         return repo.findAll();
     }
