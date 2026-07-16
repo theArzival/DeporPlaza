@@ -11,6 +11,8 @@
     <link rel="stylesheet" th:href="@{/css/AdminStyle.css}">
     <link rel="stylesheet" th:href="@{/css/style.css}">
     <title>Gestionar Campos Deportivos - DeporPlaza</title>
+    <link rel="icon" th:href="@{/img/iconDeporPlaza.png}">
+
 </head>
 
 <body>
@@ -102,8 +104,7 @@
                 <form id="busquedaForm" class="mb-3 d-flex flex-row justify-content-between gap-1">
                     <div class="input-dniBusqueda">
                         <label class="form-label">Por DNI</label>
-                        <input id="dniBusqueda" type="text" class="form-control"
-                            placeholder="Ingrese el DNI...">
+                        <input id="dniBusqueda" type="text" class="form-control" placeholder="Ingrese el DNI...">
                     </div>
                     <div class="input-apellidosBusqueda">
                         <label class="form-label">Por Apellidos</label>
@@ -116,7 +117,8 @@
                     </div>
                     <div class="input-telefonoBusqueda">
                         <label class="form-label">Por Telefono</label>
-                        <input id="telefonoBusqueda" type="text" class="form-control" placeholder="Ingrese número de telefono...">
+                        <input id="telefonoBusqueda" type="text" class="form-control"
+                            placeholder="Ingrese número de telefono...">
                     </div>
                     <div class=" input-rolBusqueda">
                         <label class="form-label">Por Rol</label>
@@ -231,7 +233,7 @@
             dniInput = document.getElementById('dni');
             nombresInput = document.getElementById('nombres');
             apellidosInput = document.getElementById('apellidos');
-            fetch("/buscarDni", {
+            fetch("/buscarDniRegistro", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/x-www-form-urlencoded"
@@ -251,8 +253,6 @@
                         nombresInput.value = "";
                         apellidosInput.value = "";
                     } else {
-                        console.log(data)
-
                         nombresInput.value = data.nombres;
                         apellidosInput.value = data.apellidos;
                     }
@@ -544,7 +544,7 @@
                 .then(data => {
                     datos = data.usuarios;
                     cargarTablaUsuario("tablaUsuarioBody", datos);
-                    
+
                 });
         }
         function limpiarBusqueda() {

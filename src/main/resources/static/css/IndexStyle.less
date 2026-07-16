@@ -49,6 +49,7 @@ body {
             justify-content: baseline;
             align-items: center;
 
+
         }
 
         #center-bar {
@@ -57,6 +58,12 @@ body {
             justify-content: center;
             gap: 16px;
             align-items: center;
+
+            button {
+                font-weight: 900;
+
+            }
+
         }
 
         #right-bar {
@@ -358,5 +365,107 @@ body {
             font-weight: 400;
             margin: 0;
         }
+    }
+}
+
+// PARA EL MODAL
+#modalReserva {
+.modal-header{
+    background-color: @primaryColor;
+}
+    .title-form {
+        font-weight: 900;
+        font-size: 24px;
+        color: white;
+    }
+    .modal-body{
+        padding: 0;
+    }
+    #reservaForm {
+        display: grid;
+        padding: 30px;
+        gap: 10px;
+        grid-template-areas:
+            "dni dni nombres nombres"
+            "campo precio fecha horario"
+            "observaciones observaciones observaciones btn"
+            "calendar calendar calendar calendar";
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+
+        .input-campo {
+            grid-area: campo;
+        }
+
+        .input-dni {
+            grid-area: dni;
+        }
+
+        .input-nombres {
+            grid-area: nombres;
+        }
+
+        .input-precio {
+            grid-area: precio;
+        }
+
+        .input-fecha {
+            grid-area: fecha;
+        }
+
+        .input-horario {
+            grid-area: horario;
+        }
+
+        .input-observaciones {
+            grid-area: observaciones;
+        }
+
+        .btn-contenedor {
+            grid-area: btn;
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            align-items: end;
+            .btn{
+                width: 50%;
+                height: 40px;
+            }
+        }
+
+        .calendar-contenedor {
+            grid-area: calendar;
+        }
+    }
+
+    #calendar {
+        .fc-col-header-cell {
+            background-color: #198754;
+            vertical-align: middle;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+            font-weight: 900;
+            text-transform: capitalize;
+        }
+
+
+
+        tr {
+            height: 40px;
+        }
+
+        .fc-event {
+            border-radius: 8px;
+            font-weight: bold;
+            border: none;
+            text-align: center;
+        }
+    }
+
+    .btn {
+        font-weight: bold;
+        color: white;
     }
 }

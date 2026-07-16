@@ -1,11 +1,13 @@
 package com.Sistema.DeporPlaza.config;
 
+import java.time.LocalDate;
 import java.util.Collection;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import com.Sistema.DeporPlaza.model.Rol;
 import com.Sistema.DeporPlaza.model.Usuario;
 
 public class UsuarioSecurity implements UserDetails {
@@ -37,6 +39,30 @@ public class UsuarioSecurity implements UserDetails {
 
     public String getRolUsuario() {
         return usuario.getRol().getNombreRol();
+    }
+
+    public Integer getIdUsuario() {
+        return usuario.getIdUsuario();
+    }
+
+    public String getTelefonoUsuario() {
+        return usuario.getTelefono();
+    }
+
+    public String getEstadoUsuario() {
+        return usuario.getEstado();
+    }
+
+    public LocalDate getFechaRegistroUsuario() {
+        return usuario.getFechaRegistro();
+    }
+
+    public Rol getRol() {
+        return usuario.getRol();
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
     }
 
     @Override

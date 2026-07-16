@@ -60,9 +60,6 @@ public class AdminController {
     public String cargarGestionarReservas(Model modelo) {
         List<Horario> horarios = horarioService.listar();
         List<CampoDeportivo> campos = campoService.listar();
-
-        System.out.println(horarios);
-        System.out.println(horarios.size());
         modelo.addAttribute("reserva", new Reserva());
         modelo.addAttribute("horarios", horarios);
         modelo.addAttribute("campos", campos);

@@ -30,13 +30,14 @@ public class SeguridadConfig {
                                                                 "/index/**",
                                                                 "/login/**",
                                                                 "/registrar/**",
-                                                                "/buscarDni/**",
+                                                                "/buscarDniReserva/**",
+                                                                "/buscarDniRegistro/**",
                                                                 "/buscarEmail/**")
                                                 .permitAll()
                                                 .requestMatchers("/admin/**").hasRole("ADMIN")
                                                 .anyRequest().authenticated())
                                 // Aca configuramos el form para el login, osea el login personalizado que
-                                // creamos login.html enmi caso
+                                // creamos login html en mi caso
                                 .exceptionHandling(exception -> exception
                                                 .accessDeniedPage("/error403"))
                                 .formLogin(form -> form
@@ -48,7 +49,11 @@ public class SeguridadConfig {
                                                 .passwordParameter("password")
                                                 // Esto dice que todos pueden ver esta pagina
                                                 .permitAll())
-                                .logout(logout -> logout.logoutSuccessUrl("/login?logout").permitAll())
+                                .logout(logout -> logout.logoutSuccessUrl("/login?logout")
+                                                .logoutSuccessUrl("/index")
+                                                .invalidateHttpSession(true)
+                                                .deleteCookies("JSESSIONID")
+                                                .permitAll())
                                 .build();
         }
 

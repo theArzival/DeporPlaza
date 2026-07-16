@@ -84,10 +84,19 @@ public class UsuarioService {
         return repo.findById(idUsuario).orElse(null);
     }
 
-    public void existsByDni(String dni) {
+    // Verifica si ya hay un DNI existente al Registrar
+    public void existeDniRegistrado(String dni) {
         log.info("Buscando existencia de usuario con DNI: {}", dni);
         if (repo.existsByDni(dni)) {
             throw new IllegalArgumentException("El DNI ya se encuentra registrado.");
+        }
+    }
+
+    // Verfica si existe un cuenta con el DNI asociado al RESERVAR
+    public void existeDniEnBD(String dni) {
+        log.info("Buscando existencia de usuario con DNI registrado: {}", dni);
+        if (!repo.existsByDni(dni)) {
+            throw new IllegalArgumentException("El DNI no esta asociado a ninguna cuenta.");
         }
     }
 
@@ -100,8 +109,13 @@ public class UsuarioService {
 
     public Usuario buscarByDni(String dni) {
         log.info("Buscando usuario con dni: {}", dni);
-
-        return repo.findByDni(dni);
+        Usuario resultado = repo.findByDni(dni);
+        // Verifica si existe
+        if (resultado == null) {
+            log.error("El usuario con DNI:{} no existe en la BD", dni);
+            throw new IllegalArgumentException("El usuario no esta registrado");
+        }
+        return resultado;
     }
 
     public Usuario buscarByEmail(String email) {

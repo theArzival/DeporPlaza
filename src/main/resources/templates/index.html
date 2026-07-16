@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Inicio - DeporPlaza</title>
+    <link rel="icon" th:href="@{/img/iconDeporPlaza.png}">
     <link rel="stylesheet" th:href="@{/css/IndexStyle.css}">
     <link rel="stylesheet" th:href="@{/css/style.css}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -19,10 +20,10 @@
                 <span>DEPORPLAZA LIMA</span>
             </div>
             <div id="center-bar">
-                <a class="btn-bar">INICIO</a>
+                <a class="btn-bar" th:href="@{/index}">INICIO</a>
                 <a class="btn-bar"> CAMPOS</a>
                 <a class="btn-bar">HORARIOS</a>
-                <a class="btn-bar btn-resaltado">RESERVA YA!</a>
+                <button class="btn-bar btn-resaltado" type="button" id="btnReserva">RESERVA YA!</button>
             </div>
             <div id="right-bar">
                 <a th:if="${usuarioLogueado == null}" th:href="@{/login}" id="btn-login"
@@ -30,7 +31,7 @@
                 <span th:if="${usuarioLogueado != null}" id="text-logueado"
                     th:text="${usuarioLogueado.nombreCompleto}"></span>
 
-                <form th:if="${usuarioLogueado != null}" th:action="@{/logout}" id="logoutForm" method="get">
+                <form th:if="${usuarioLogueado != null}" th:action="@{/logout}" id="logoutForm" method="post">
                     <button id="dropbox-perfil" type="submit">
                         <i class="bi bi-power"></i>
                         <!-- <i class="bi bi-file-person-fill"></i> esto es pa modificar usuario -->
@@ -135,6 +136,69 @@
             <p>&copy; 2026 DeporPlaza. Todos los derechos reservados.</p>
         </div>
     </footer>
+    <!-- MODAL PARA RESERVAR -->
+    <div class="modal fade" id="modalReserva" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
+            <div class="modal-content">
+                <div class="modal-header title-form">Reservar Campo</div>
+                <div class="modal-body">
+                    <form th:object="${reserva}" class="formulario" id="reservaForm" method="post">
+                        <div class="input-campo">
+                            <label class="form-label">Campo Deportivo</label>
+                            <select class="form-select" name="idCampo" id="campo" required>
+                                <option value="" disabled selected>---Elegir---</option>
+                                <option th:each="p:${campos}" th:value="${p.idCampo}" th:text="${p.nombreCampo}"
+                                    th:data-precio="${p.precioHora}">
+                                </option>
+                            </select>
+                        </div>
+                        <div class=" input-dni">
+                            <label class="form-label">DNI</label>
+                            <input type="text" placeholder="DNI" id="dni" name="dniCliente" class="form-control"
+                                required readonly tabindex="-1">
+                        </div>
+                        <div class=" input-nombres">
+                            <label class="form-label">Nombre Completo</label>
+                            <input type="text" placeholder="Ingrese su DNI" class="form-control" id="nombreCompleto"
+                                required readonly tabindex="-1">
+                        </div>
+
+                        <div class=" input-precio">
+                            <label class="form-label">Precio por Hora</label>
+                            <input type="number" placeholder="Seleccione el Campo Deportivo" class="form-control"
+                                id="precio" required readonly tabindex="-1">
+                        </div>
+                        <div class=" input-fecha">
+                            <label class="form-label">Fecha de Reserva</label>
+                            <input type="text" th:field="*{fechaReserva}" class="form-control" id="fecha" required
+                                readonly tabindex="-1" placeholder="Seleccione una fecha...">
+                        </div>
+                        <div class="input-horario">
+                            <label class="form-label">Horario Elegido</label>
+                            <input type="text" class="form-control" id="horario" required readonly tabindex="-1"
+                                placeholder="Seleccione un horario...">
+                            <input type="text" id="idHorario" name="idHorario" readonly hidden>
+
+                        </div>
+                        <div class="input-observaciones">
+                            <label class="form-label">Observaciones</label>
+                            <textarea th:field='*{observaciones}' id="observaciones" class="form-control">
+                            </textarea>
+
+                        </div>
+                        <div class="btn-contenedor">
+                            <button type="submit" class="btn btn-success">Registrar</button>
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                        </div>
+                        <div class='calendar-contenedor'>
+                            <div id="calendar"></div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer"></div>
+            </div>
+        </div>
+    </div>
     <!-- FONT DE POPPER PARA BTNS -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
@@ -144,12 +208,16 @@
         integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.20/index.global.min.js"></script>
     <script th:inline="javascript">
+        const listaHorarios = /*[[${horarios}]]*/[];
+        const listaCampos = /*[[${campos }]];*/[];
+        const usuarioLogueado =/*[[${usuarioLogueado != null ? usuarioLogueado.usuario : null}]]*/ null;
+        let calendarRendered = false;
     </script>
     <script>
-
+        //CODIGO PARA ACTIVAR EL CERRADO DE SESION
         const formLogout = document.getElementById("logoutForm");
-
         if (formLogout) {
             formLogout.addEventListener("submit", (e) => {
                 e.preventDefault();
@@ -165,12 +233,276 @@
                 }).then((result) => {
                     if (result.isConfirmed) {
                         formLogout.submit();
-                        window.location.href = "/";
+                        //window.location.href = "/";
 
                     }
                 });
             });
         }
+
+        const modalReserva = document.getElementById("modalReserva");
+        let calendar = null;
+        let campoSeleccionado = null;
+
+        //CODIGO PARA CAMPO DEPORTIVO Y PRECIO DE CAMPO
+        const selectCampo = document.getElementById("campo");
+        const inputPrecio = document.getElementById("precio");
+        selectCampo.addEventListener("change", function () {
+            const inputFecha = document.getElementById("fecha");
+            const inputHorario = document.getElementById("horario");
+            const inputIdHorario = document.getElementById("idHorario");
+            inputFecha.value = "";
+            inputHorario.value = "";
+            inputIdHorario.value = "";
+            const opcionElegida = this.options[this.selectedIndex];
+            const precio = opcionElegida.dataset.precio;
+            //Obtendra el idCampo
+            campoSeleccionado = this.value;
+            inputPrecio.value = precio;
+            if (calendar) {
+                calendar.getEvents().forEach(e => {
+                    if (e.extendedProps.placeholder) {
+                        e.remove();
+                    }
+                });
+                calendar.refetchEvents();
+            }
+        });
+
+        // CODIGO PARA GENERACION DE CALENDARIO
+        //Se crea el CALENDAR
+        const calendarEl = document.getElementById('calendar');
+        calendar = new FullCalendar.Calendar(calendarEl, {
+
+            initialView: 'timeGridWeek',
+
+            locale: 'es',
+
+            events: function (info, successCallback, failureCallback) {
+                if (!campoSeleccionado) {
+                    successCallback([]);
+                    return;
+                }
+                fetch(`/reserva/eventos?idCampo=${campoSeleccionado}`)
+                    .then(response => response.json())
+                    .then(data => successCallback(data))
+                    .catch(error => failureCallback(error));
+            },
+            allDaySlot: false,
+            slotMinTime: '07:00:00',
+            slotMaxTime: '23:00:00',
+            slotLabelFormat: {
+                hour: '2-digit',
+                minute: '2-digit',
+                hour12: false
+            },
+            dayHeaderFormat: { weekday: 'long', day: 'numeric' },
+            //eventColor: '#198754',
+            nowIndicator: true,
+            slotDuration: '01:00:00',
+            height: 'auto',
+            dateClick: function (info) {
+                if (!campoSeleccionado) {
+                    Swal.fire({
+                        icon: "warning",
+                        title: "Campo deportivo no ha sido seleccionado",
+                        text: "Debe seleccionar un campo deportivo."
+                    });
+                    return;
+                }
+                const FechaActual = new Date();
+                if (info.date <= FechaActual) {
+                    Swal.fire({
+                        icon: "warning",
+                        title: "Horario no disponible",
+                        text: "No se puede seleccionar una fecha pasada."
+                    });
+                    return;
+                }
+                const fecha = info.dateStr.split('T')[0];
+                const horaInicio = info.date.toLocaleTimeString('es-PE', {
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    second: "2-digit",
+                    hour12: false
+                });
+
+                const horarioSeleccionado = listaHorarios.find(h => h.horaInicio === horaInicio)
+
+                document.getElementById("fecha").value = fecha;
+                document.getElementById("idHorario").value = horarioSeleccionado.idHorario;
+                document.getElementById("horario").value = horarioSeleccionado.horaInicio.slice(0, 5) + " - " + horarioSeleccionado.horaFin.slice(0, 5)
+                calendar.getEvents().forEach(e => {
+                    if (e.extendedProps.placeholder) {
+                        e.remove();
+                    }
+                });
+
+                calendar.addEvent({
+                    start: info.date,
+                    end: new Date(info.date.getTime() + 60 * 60 * 1000),
+                    backgroundColor: '#29A36C',
+                    textColor: '#fff',
+                    editable: false,
+                    overlap: false,
+                    extendedProps: {
+                        placeholder: true
+                    }
+                });
+
+            },
+            buttonText: {
+                today: "Hoy",
+                month: 'Mes',
+                week: 'Semana',
+                day: 'Día'
+            },
+            firstDay: 1,
+            eventDrop: function (info) {
+                console.log("Evento movido");
+            },
+
+
+            /*select: function (info) {
+                console.log(info.start)
+                console.log(info.startStr)
+                console.log(info.end)
+                console.log(info.endStr)
+                for(i in info){
+                    console.log(i);
+                }
+            },
+            */
+
+        });
+
+        //CODIGO PARA FORMULARIO RESERVA
+        const reservaForm = document.getElementById('reservaForm');
+        if (reservaForm) {
+            reservaForm.addEventListener('submit', function (event) {
+                event.preventDefault(); // Evita recargar la página
+
+                // Enviar datos con AJAX
+                const formData = new FormData(reservaForm);
+
+                fetch('/reserva/registrar', {
+                    method: 'POST',
+                    body: formData
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Reserva Exitosa',
+                                text: data.message,
+                                confirmButtonText: 'Aceptar'
+                            }).then(() => {
+
+                                // Limpiar formulario
+                                limpiarFormReserva();
+                                calendar.getEvents().forEach(e => {
+                                    if (e.extendedProps.placeholder) {
+                                        e.remove();
+                                    }
+                                });
+                                calendar.refetchEvents();
+
+
+                            });
+
+                        } else {
+
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Error',
+                                text: data.message
+                            });
+
+                        }
+
+                    })
+                    .catch(error => {
+
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Error del servidor',
+                            text: error
+                        });
+
+                    });
+
+            });
+        }
+        if (modalReserva) {
+            modalReserva.addEventListener('shown.bs.modal', function () {
+
+                if (usuarioLogueado) {
+                    if (!calendarRendered) {
+                        calendar.render();
+                        calendarRendered = true;
+                    } else {
+                        calendar.updateSize();
+                    }
+                    //Se colocan los datos del usuario logueado
+                    const dni = document.getElementById("dni");
+                    const nombreCompleto = document.getElementById("nombreCompleto");
+                    dni.value = usuarioLogueado.dni;
+                    nombreCompleto.value = usuarioLogueado.apellidos + " " + usuarioLogueado.nombres;
+                }
+
+
+            });
+        }
+        function limpiarFormReserva() {
+            const selectCampo = document.getElementById("campo");
+            const inputPrecio = document.getElementById("precio");
+            const inputFecha = document.getElementById("fecha");
+            const inputHorario = document.getElementById("horario");
+            const inputIdHorario = document.getElementById("idHorario");
+            const inputObs = document.getElementById("observaciones");
+            selectCampo.value = "";
+            inputPrecio.value = "";
+            inputFecha.value = "";
+            inputHorario.value = "";
+            inputIdHorario.value = "";
+            inputObs.value = "";
+            campoSeleccionado = null;
+        }
+
+        const btnReserva = document.getElementById("btnReserva");
+
+        btnReserva.addEventListener("click", () => {
+
+            if (!usuarioLogueado) {
+
+                Swal.fire({
+                    icon: "warning",
+                    title: "Debes iniciar sesión",
+                    text: "Para realizar una reserva debes iniciar sesión o crear una cuenta.",
+                    showCancelButton: true,
+                    confirmButtonText: "Iniciar sesión",
+                    cancelButtonText: "Tal vez más tarde",
+                    confirmButtonColor: "#198754",
+                    cancelButtonColor: "#d33"
+                }).then((result) => {
+
+                    if (result.isConfirmed) {
+                        window.location.href = "/login";
+                    }
+
+                });
+
+                return;
+            }
+
+            const modal = new bootstrap.Modal(
+                document.getElementById("modalReserva")
+            );
+
+            modal.show();
+        });
     </script>
 </body>
 

@@ -10,6 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.20/index.global.min.css" rel="stylesheet">
     <link rel="stylesheet" th:href="@{/css/AdminStyle.css}">
     <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="icon" th:href="@{/img/iconDeporPlaza.png}">
     <title>Gestionar Campos Deportivos - DeporPlaza</title>
 </head>
 
@@ -458,7 +459,7 @@
         tipoForm.addEventListener("submit", (event) => {
             event.preventDefault();
             const formData = new FormData(tipoForm);
-            const botonEditar= document.getElementById("btnSaveTipo")
+            const botonEditar = document.getElementById("btnSaveTipo")
             fetch('/admin/registrarTipo', {
                 method: "POST",
                 body: formData
@@ -477,7 +478,7 @@
                             cargarTablaTipo();
                             botonEditar.classList.add("btn-success");
                             botonEditar.classList.remove("btn-warning");
-                            botonEditar.innerHTML="Guardar"
+                            botonEditar.innerHTML = "Guardar"
                             buscar();
 
                         });

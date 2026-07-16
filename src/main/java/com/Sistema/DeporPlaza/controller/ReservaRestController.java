@@ -44,12 +44,25 @@ public class ReservaRestController {
 
     }
 
-    @PostMapping("/admin/reservar")
-    public Map<String, Object> reservar(@ModelAttribute Reserva reserva, @RequestParam Integer idCampo,
-            @RequestParam String dniCliente, @RequestParam Integer idHorario) {
+    @PostMapping("/reserva/registrar")
+    public Map<String, Object> reservar(@ModelAttribute Reserva reserva,
+            @RequestParam(required = false) Integer idCampo,
+            @RequestParam(required = false) Integer idHorario,
+            @RequestParam(required = false) String dniCliente) {
         Map<String, Object> response = new HashMap<>();
 
         try {
+            if (idCampo == null) {
+                throw new IllegalArgumentException("Campo inválido.");
+            }
+
+            if (idHorario == null) {
+                throw new IllegalArgumentException("Seleccione un el Horario a reservar.");
+            }
+
+            if (dniCliente == null || dniCliente.isBlank()) {
+                throw new IllegalArgumentException("DNI inválido.");
+            }
             Horario horario = new Horario();
             horario.setIdHorario(idHorario);
             CampoDeportivo campo = new CampoDeportivo();
@@ -65,6 +78,10 @@ public class ReservaRestController {
             response.put("success", true);
             response.put("message", "Reserva registrada correctamente!");
         } catch (IllegalArgumentException e) {
+            // En caso de error, se captura la excepción y se devuelve un mensaje de error
+            response.put("success", false);
+            response.put("message", "Error al reservar: " + e.getMessage());
+        } catch (Exception e) {
             // En caso de error, se captura la excepción y se devuelve un mensaje de error
             response.put("success", false);
             response.put("message", "Error al reservar: " + e.getMessage());

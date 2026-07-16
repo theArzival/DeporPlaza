@@ -104,6 +104,9 @@ body {
   gap: 16px;
   align-items: center;
 }
+#header #nav-bar #center-bar button {
+  font-weight: 900;
+}
 #header #nav-bar #right-bar {
   flex: 1;
   display: flex;
@@ -341,4 +344,80 @@ body {
   font-size: 14px;
   font-weight: 400;
   margin: 0;
+}
+#modalReserva .modal-header {
+  background-color: #1e7c52;
+}
+#modalReserva .title-form {
+  font-weight: 900;
+  font-size: 24px;
+  color: white;
+}
+#modalReserva .modal-body {
+  padding: 0;
+}
+#modalReserva #reservaForm {
+  display: grid;
+  padding: 30px;
+  gap: 10px;
+  grid-template-areas: "dni dni nombres nombres" "campo precio fecha horario" "observaciones observaciones observaciones btn" "calendar calendar calendar calendar";
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+#modalReserva #reservaForm .input-campo {
+  grid-area: campo;
+}
+#modalReserva #reservaForm .input-dni {
+  grid-area: dni;
+}
+#modalReserva #reservaForm .input-nombres {
+  grid-area: nombres;
+}
+#modalReserva #reservaForm .input-precio {
+  grid-area: precio;
+}
+#modalReserva #reservaForm .input-fecha {
+  grid-area: fecha;
+}
+#modalReserva #reservaForm .input-horario {
+  grid-area: horario;
+}
+#modalReserva #reservaForm .input-observaciones {
+  grid-area: observaciones;
+}
+#modalReserva #reservaForm .btn-contenedor {
+  grid-area: btn;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: end;
+}
+#modalReserva #reservaForm .btn-contenedor .btn {
+  width: 50%;
+  height: 40px;
+}
+#modalReserva #reservaForm .calendar-contenedor {
+  grid-area: calendar;
+}
+#modalReserva #calendar .fc-col-header-cell {
+  background-color: #198754;
+  vertical-align: middle;
+}
+#modalReserva #calendar a {
+  text-decoration: none;
+  color: white;
+  font-weight: 900;
+  text-transform: capitalize;
+}
+#modalReserva #calendar tr {
+  height: 40px;
+}
+#modalReserva #calendar .fc-event {
+  border-radius: 8px;
+  font-weight: bold;
+  border: none;
+  text-align: center;
+}
+#modalReserva .btn {
+  font-weight: bold;
+  color: white;
 }

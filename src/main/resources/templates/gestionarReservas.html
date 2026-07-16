@@ -10,7 +10,7 @@
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     <!-- <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.20/index.global.min.css" rel="stylesheet"> -->
-
+    <link rel="icon" th:href="@{/img/iconDeporPlaza.png}">
     <title>Gestionar Reservas - DeporPlaza</title>
 </head>
 
@@ -240,7 +240,7 @@
             dniInput = document.getElementById('dni');
             nombresInput = document.getElementById('nombreCompleto');
             dniCliente = document.getElementById("dniCliente");
-            fetch("/buscarDni", {
+            fetch("/buscarDniReserva", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/x-www-form-urlencoded"
@@ -254,7 +254,7 @@
                         Swal.fire({
                             icon: "error",
                             title: "Error",
-                            text: "DNI no encontrado"
+                            text: "El DNI no esta vinculado a ninguna cuenta"
                         });
                         nombresInput.value = "";
                     } else {
@@ -282,13 +282,12 @@
         const reservaForm = document.getElementById('reservaForm');
 
         reservaForm.addEventListener('submit', function (event) {
-
             event.preventDefault(); // Evita recargar la página
 
             // Enviar datos con AJAX
             const formData = new FormData(reservaForm);
 
-            fetch('/admin/reservar', {
+            fetch('/reserva/registrar', {
                 method: 'POST',
                 body: formData
             })
