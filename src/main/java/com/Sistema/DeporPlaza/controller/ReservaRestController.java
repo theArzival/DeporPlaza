@@ -1,17 +1,21 @@
 package com.Sistema.DeporPlaza.controller;
 
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,14 +24,18 @@ import com.Sistema.DeporPlaza.model.CampoDeportivo;
 import com.Sistema.DeporPlaza.model.Horario;
 import com.Sistema.DeporPlaza.model.Reserva;
 import com.Sistema.DeporPlaza.model.Usuario;
+import com.Sistema.DeporPlaza.repository.ReservaRepository;
 import com.Sistema.DeporPlaza.service.ApachePoiService;
 import com.Sistema.DeporPlaza.service.ReservaService;
 import com.Sistema.DeporPlaza.service.UsuarioService;
+import com.Sistema.DeporPlaza.specification.ReservaSpecification;
 
 @RestController
 public class ReservaRestController {
     @Autowired
     private ReservaService reservaService;
+    @Autowired
+    private ReservaRepository reservaRepository;
 
     @Autowired
     private UsuarioService usuarioService;
@@ -108,6 +116,60 @@ public class ReservaRestController {
                 .contentType(
                         MediaType.APPLICATION_OCTET_STREAM)
                 .body(excel);
+    }
+
+    @GetMapping("/admin/busquedaReservas")
+    public Map<String, Object> buscarReservas(
+            @RequestParam(required = false) String dni,
+            @RequestParam(required = false) String apellidos,
+            @RequestParam(required = false) Integer idCampo,
+            @RequestParam(required = false) @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate fechaReserva,
+            @RequestParam(required = false) String estado) {
+        Map<String, Object> response = new HashMap<>();
+        try {
+            ReservaSpecification specification = new ReservaSpecification(
+                    dni,
+                    apellidos,
+                    idCampo,
+                    fechaReserva,
+                    estado);
+            List<Reserva> reservas = reservaRepository.findAll(specification);
+            // El reponse almacena claves valores
+            response.put("success", true);
+            response.put("reservas", reservas);
+        } catch (IllegalArgumentException e) {
+            // En caso de error, se captura la excepción y se devuelve un mensaje de error
+            response.put("success", false);
+            response.put("message", "Error al cargar las reservas: " + e.getMessage());
+        }
+        return response;
+    }
+
+    @PutMapping("/admin/cancelarReserva/{idReserva}")
+    public Map<String, Object> cancelarReserva(
+            @PathVariable Integer idReserva) {
+
+        Map<String, Object> response = new HashMap<>();
+
+        try {
+
+            Reserva reserva = reservaService.buscarById(idReserva);
+
+            reserva.setEstado("CANCELADO");
+
+            reservaService.guardar(reserva);
+
+            response.put("success", true);
+            response.put("message", "La reserva fue cancelada correctamente.");
+
+        } catch (Exception e) {
+
+            response.put("success", false);
+            response.put("message", e.getMessage());
+
+        }
+
+        return response;
     }
 
 }

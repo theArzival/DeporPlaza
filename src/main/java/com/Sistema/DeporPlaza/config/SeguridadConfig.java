@@ -28,6 +28,7 @@ public class SeguridadConfig {
                                                                 "/error500/**",
                                                                 "/",
                                                                 "/index/**",
+                                                                "/horarios/**",
                                                                 "/login/**",
                                                                 "/registrar/**",
                                                                 "/buscarDniReserva/**",

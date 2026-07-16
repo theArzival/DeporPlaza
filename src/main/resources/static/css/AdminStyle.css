@@ -94,7 +94,7 @@ header p {
   margin: 0;
   color: #f8f9fa;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 900;
 }
 header #header-left {
   display: flex;
@@ -216,6 +216,31 @@ main section .bloque .formulario {
 main section .bloque #reservaForm {
   grid-template-areas: "dni nombres campos precio" "fecha horario observaciones observaciones" "botones botones botones botones" "calendar calendar calendar calendar";
   grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+main section .bloque #busquedaReservaForm {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 30px;
+}
+main section .bloque #busquedaReservaForm .input-dniBusqueda {
+  flex: 1;
+}
+main section .bloque #busquedaReservaForm .input-apellidosBusqueda {
+  flex: 2;
+}
+main section .bloque #busquedaReservaForm .input-campoBusqueda {
+  flex: 2;
+}
+main section .bloque #busquedaReservaForm .input-fechaBusqueda {
+  flex: 1.5;
+}
+main section .bloque #busquedaReservaForm .input-estadoBusqueda {
+  flex: 1;
+}
+main section .bloque #busquedaReservaForm .contenedor-btn {
+  flex: 0.5;
 }
 main section .bloque #campoForm {
   grid-template-areas: "nombreCampo precioCampo tipoCampo tipoCampo" "descripcion descripcion descripcion estado " "botones botones botones botones";
@@ -376,4 +401,7 @@ main section .bloque #busquedaForm button:hover {
 }
 .card-dashboard tbody {
   overflow-y: auto;
+}
+#text-logueado {
+  font-weight: 900;
 }

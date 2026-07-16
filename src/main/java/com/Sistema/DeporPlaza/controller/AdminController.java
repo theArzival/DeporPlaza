@@ -68,6 +68,18 @@ public class AdminController {
 
     }
 
+    @GetMapping("/admin/buscarReservas")
+    public String cargarBuscarrReservas(Model modelo) {
+        List<Horario> horarios = horarioService.listar();
+        List<CampoDeportivo> campos = campoService.listar();
+        modelo.addAttribute("reserva", new Reserva());
+        modelo.addAttribute("horarios", horarios);
+        modelo.addAttribute("campos", campos);
+
+        return "buscarReservas";
+
+    }
+
     @GetMapping("/admin/camposDeportivos")
     public String cargarCamposDeportivos(Model modelo) {
         List<CampoDeportivo> campos = campoService.listar();

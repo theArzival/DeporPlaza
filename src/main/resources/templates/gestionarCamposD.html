@@ -215,6 +215,23 @@
 
     <script>
         //CODIGO PARA CERRAR SESION
+        function salir() {
+            Swal.fire({
+                title: "¿Estas seguro?",
+                text: "Cerraras la sesion actual.",
+                icon: "question",
+                showCancelButton: true,
+                confirmButtonColor: "#1e7c52",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Si, deseo salir"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    fetch('/logout', { method: 'POST' });
+                    window.location.href = "/";
+                }
+            });
+        };
+        //CODIGO PARA CERRAR SESION
         const formLogout = document.getElementById("logoutForm")
         formLogout.addEventListener('submit', (e) => {
             e.preventDefault();

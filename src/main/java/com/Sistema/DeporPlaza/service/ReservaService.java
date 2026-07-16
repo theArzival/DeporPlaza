@@ -94,7 +94,10 @@ public class ReservaService {
     }
 
     public Reserva buscarById(Integer idReserva) {
-        return reservaRepository.findById(idReserva).orElse(null);
+        return reservaRepository.findById(idReserva).orElseThrow(
+                () -> new IllegalArgumentException(
+                        "La reserva no existe."));
+
     }
 
     public List<EventoCalendarDTO> obtenerEventosCalendario() {
@@ -127,7 +130,7 @@ public class ReservaService {
 
     public List<EventoCalendarDTO> obtenerEventosPorCampo(Integer idCampo) {
 
-        List<Reserva> reservas = reservaRepository.findByCampoIdCampo(idCampo);
+        List<Reserva> reservas = reservaRepository.findByCampoIdCampoAndEstado(idCampo, "RESERVADO");
 
         List<EventoCalendarDTO> eventos = new ArrayList<>();
 

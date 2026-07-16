@@ -44,7 +44,7 @@ header {
         margin: 0;
         color: @secondaryColor;
         font-size: @textSize;
-        font-weight: 500;
+        font-weight: 900;
 
     }
 
@@ -200,6 +200,38 @@ main {
                 grid-template-columns: 1fr 1fr 1fr 1fr;
             }
 
+            #busquedaReservaForm {
+                display: flex;
+                flex-direction: row;
+                //ALINEA SEGU NSU BORDE INFERIOR
+                align-items: flex-end;
+                justify-content: space-between;
+                gap: 30px;
+                .input-dniBusqueda {
+                    flex: 1;
+                }
+
+                .input-apellidosBusqueda {
+                    flex: 2;
+                }
+
+                .input-campoBusqueda {
+                    flex: 2;
+                }
+
+                .input-fechaBusqueda {
+                    flex: 1.5;
+                }
+
+                .input-estadoBusqueda {
+                    flex: 1;
+                }
+
+                .contenedor-btn {
+                    flex: .5;
+                }
+            }
+
             #campoForm {
                 grid-template-areas:
                     "nombreCampo precioCampo tipoCampo tipoCampo"
@@ -248,7 +280,8 @@ main {
                 .input-estado {
                     grid-area: estado;
                 }
-                .input-rol{
+
+                .input-rol {
                     grid-area: rol;
                 }
             }
@@ -410,20 +443,28 @@ main {
 }
 
 //DASHBOARD STYLES
-.card-dashboard{
+.card-dashboard {
     height: 430px;
 }
 
-.card-dashboard .card-body{
-    height: calc(100% - 57px); 
+.card-dashboard .card-body {
+    height: calc(100% - 57px);
 }
-.card-dashboard canvas{
+
+.card-dashboard canvas {
     width: 100% !important;
     height: 100% !important;
 }
-.card-dashboard .table-responsive{
-    height:100%;
-    overflow-y:auto;
-}.card-dashboard tbody{
-    overflow-y:auto;
+
+.card-dashboard .table-responsive {
+    height: 100%;
+    overflow-y: auto;
+}
+
+.card-dashboard tbody {
+    overflow-y: auto;
+}
+
+#text-logueado {
+    font-weight: 900;
 }

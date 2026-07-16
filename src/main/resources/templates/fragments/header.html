@@ -12,7 +12,7 @@
             <p th:if="${usuarioLogueado != null}" id="text-logueado" th:text="${usuarioLogueado.nombreCompleto}"></p>
 
             <form th:if="${usuarioLogueado != null}" th:action="@{/logout}" id="logoutForm" method="post">
-                <button id="dropbox-perfil" type="submit" th:onclick="salir()">
+                <button id="dropbox-perfil" type="button">
                     <i class="bi bi-file-person-fill"></i>
                 </button>
             </form>
