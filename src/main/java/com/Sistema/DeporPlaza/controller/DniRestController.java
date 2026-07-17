@@ -39,7 +39,6 @@ public class DniRestController {
             usuarioService.existeDniRegistrado(dni);
             //
             RestTemplate restTemplate = new RestTemplate();
-            System.out.println("Si paso");
             HttpHeaders headers = new HttpHeaders();
             headers.set("Authorization", "Bearer " + API_TOKEN);
             headers.setContentType(MediaType.APPLICATION_JSON);
