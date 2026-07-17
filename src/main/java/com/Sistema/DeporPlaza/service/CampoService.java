@@ -20,7 +20,7 @@ public class CampoService {
     private CampoRepository repo;
     @Autowired
     private ReservaRepository reservaRepository;
-    private static final Logger log = LoggerFactory.getLogger(ReservaService.class);
+    private static final Logger log = LoggerFactory.getLogger(CampoService.class);
 
     public Long contar() {
         return repo.count();
@@ -68,7 +68,7 @@ public class CampoService {
     public void guardar(CampoDeportivo campo) {
         repo.save(campo);
         log.info(
-                "Reserva registrada correctamente. ID: {}, Nombre Campo: {}, Precio por Hora: {}",
+                "Campo registrado correctamente. ID: {}, Nombre Campo: {}, Precio por Hora: {}",
                 campo.getIdCampo(),
                 campo.getNombreCampo(),
                 campo.getPrecioHora());

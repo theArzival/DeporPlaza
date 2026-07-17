@@ -473,3 +473,878 @@ java.lang.ClassCastException: class java.io.ObjectStreamClass cannot be cast to 
 2026-07-16T19:57:49.143-05:00  INFO 32376 --- [DeporPlaza] [http-nio-8803-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2026-07-16T19:57:49.144-05:00  INFO 32376 --- [DeporPlaza] [http-nio-8803-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2026-07-16T19:57:49.145-05:00  INFO 32376 --- [DeporPlaza] [http-nio-8803-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-07-16T22:04:32.862-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] c.S.DeporPlaza.DeporPlazaApplication     : Starting DeporPlazaApplication using Java 21.0.8 with PID 5112 (C:\Users\JOSE-PC\PROYECTOS SPRING\DeporPlaza V1\DeporPlaza\target\classes started by JOSE-PC in C:\Users\JOSE-PC\PROYECTOS SPRING\DeporPlaza V1\DeporPlaza)
+2026-07-16T22:04:32.869-05:00 DEBUG 5112 --- [DeporPlaza] [restartedMain] c.S.DeporPlaza.DeporPlazaApplication     : Running with Spring Boot v4.0.6, Spring v7.0.7
+2026-07-16T22:04:32.870-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] c.S.DeporPlaza.DeporPlazaApplication     : No active profile set, falling back to 1 default profile: "default"
+2026-07-16T22:04:32.935-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-07-16T22:04:32.936-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-07-16T22:04:33.938-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-07-16T22:04:34.036-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 86 ms. Found 6 JPA repository interfaces.
+2026-07-16T22:04:34.808-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8803 (http)
+2026-07-16T22:04:34.831-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-07-16T22:04:34.832-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-07-16T22:04:34.896-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1960 ms
+2026-07-16T22:04:35.133-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-07-16T22:04:35.213-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-07-16T22:04:35.859-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-07-16T22:04:35.922-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-07-16T22:04:36.153-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@34114dd5
+2026-07-16T22:04:36.156-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-07-16T22:04:36.211-05:00  WARN 5112 --- [DeporPlaza] [restartedMain] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-07-16T22:04:36.243-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/bd_deporplaza]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: bd_deporplaza/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-07-16T22:04:37.171-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-07-16T22:04:37.585-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-07-16T22:04:37.678-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-07-16T22:04:39.021-05:00  WARN 5112 --- [DeporPlaza] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-07-16T22:04:39.124-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name usuarioDetailsService
+2026-07-16T22:04:39.370-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] o.s.b.w.a.WelcomePageHandlerMapping      : Adding welcome page template: index
+2026-07-16T22:04:39.812-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8803 (http) with context path '/'
+2026-07-16T22:04:39.823-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] c.S.DeporPlaza.DeporPlazaApplication     : Started DeporPlazaApplication in 7.514 seconds (process running for 7.989)
+2026-07-16T22:06:12.803-05:00  INFO 5112 --- [DeporPlaza] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-07-16T22:06:12.808-05:00  INFO 5112 --- [DeporPlaza] [Thread-1] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-07-16T22:06:12.813-05:00  INFO 5112 --- [DeporPlaza] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-07-16T22:06:12.817-05:00  INFO 5112 --- [DeporPlaza] [Thread-1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-07-16T22:06:12.822-05:00  INFO 5112 --- [DeporPlaza] [Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-07-16T22:06:12.831-05:00  INFO 5112 --- [DeporPlaza] [Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-07-16T22:06:12.898-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] c.S.DeporPlaza.DeporPlazaApplication     : Starting DeporPlazaApplication using Java 21.0.8 with PID 5112 (C:\Users\JOSE-PC\PROYECTOS SPRING\DeporPlaza V1\DeporPlaza\target\classes started by JOSE-PC in C:\Users\JOSE-PC\PROYECTOS SPRING\DeporPlaza V1\DeporPlaza)
+2026-07-16T22:06:12.898-05:00 DEBUG 5112 --- [DeporPlaza] [restartedMain] c.S.DeporPlaza.DeporPlazaApplication     : Running with Spring Boot v4.0.6, Spring v7.0.7
+2026-07-16T22:06:12.898-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] c.S.DeporPlaza.DeporPlazaApplication     : No active profile set, falling back to 1 default profile: "default"
+2026-07-16T22:06:13.167-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-07-16T22:06:13.201-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 31 ms. Found 6 JPA repository interfaces.
+2026-07-16T22:06:13.350-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8803 (http)
+2026-07-16T22:06:13.351-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-07-16T22:06:13.352-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-07-16T22:06:13.377-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 477 ms
+2026-07-16T22:06:13.407-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-07-16T22:06:13.437-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-07-16T22:06:13.438-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2026-07-16T22:06:13.443-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@9d98a72
+2026-07-16T22:06:13.443-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2026-07-16T22:06:13.445-05:00  WARN 5112 --- [DeporPlaza] [restartedMain] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-07-16T22:06:13.446-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/bd_deporplaza]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: bd_deporplaza/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-07-16T22:06:13.534-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-07-16T22:06:13.717-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-07-16T22:06:13.838-05:00  WARN 5112 --- [DeporPlaza] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-07-16T22:06:13.857-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name usuarioDetailsService
+2026-07-16T22:06:13.907-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] o.s.b.w.a.WelcomePageHandlerMapping      : Adding welcome page template: index
+2026-07-16T22:06:13.965-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8803 (http) with context path '/'
+2026-07-16T22:06:13.969-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] c.S.DeporPlaza.DeporPlazaApplication     : Started DeporPlazaApplication in 1.097 seconds (process running for 102.135)
+2026-07-16T22:06:13.971-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-07-16T22:06:21.599-05:00  INFO 5112 --- [DeporPlaza] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-07-16T22:06:21.601-05:00  INFO 5112 --- [DeporPlaza] [Thread-5] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-07-16T22:06:21.606-05:00  INFO 5112 --- [DeporPlaza] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-07-16T22:06:21.609-05:00  INFO 5112 --- [DeporPlaza] [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-07-16T22:06:21.610-05:00  INFO 5112 --- [DeporPlaza] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2026-07-16T22:06:21.612-05:00  INFO 5112 --- [DeporPlaza] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2026-07-16T22:06:21.701-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] c.S.DeporPlaza.DeporPlazaApplication     : Starting DeporPlazaApplication using Java 21.0.8 with PID 5112 (C:\Users\JOSE-PC\PROYECTOS SPRING\DeporPlaza V1\DeporPlaza\target\classes started by JOSE-PC in C:\Users\JOSE-PC\PROYECTOS SPRING\DeporPlaza V1\DeporPlaza)
+2026-07-16T22:06:21.702-05:00 DEBUG 5112 --- [DeporPlaza] [restartedMain] c.S.DeporPlaza.DeporPlazaApplication     : Running with Spring Boot v4.0.6, Spring v7.0.7
+2026-07-16T22:06:21.702-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] c.S.DeporPlaza.DeporPlazaApplication     : No active profile set, falling back to 1 default profile: "default"
+2026-07-16T22:06:21.887-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-07-16T22:06:21.923-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 34 ms. Found 6 JPA repository interfaces.
+2026-07-16T22:06:22.029-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8803 (http)
+2026-07-16T22:06:22.030-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-07-16T22:06:22.030-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-07-16T22:06:22.048-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 345 ms
+2026-07-16T22:06:22.078-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-07-16T22:06:22.102-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-07-16T22:06:22.103-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2026-07-16T22:06:22.107-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection com.mysql.cj.jdbc.ConnectionImpl@59446f71
+2026-07-16T22:06:22.108-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2026-07-16T22:06:22.109-05:00  WARN 5112 --- [DeporPlaza] [restartedMain] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-07-16T22:06:22.111-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/bd_deporplaza]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: bd_deporplaza/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-07-16T22:06:22.184-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-07-16T22:06:22.466-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-07-16T22:06:22.591-05:00  WARN 5112 --- [DeporPlaza] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-07-16T22:06:22.605-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name usuarioDetailsService
+2026-07-16T22:06:22.635-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] o.s.b.w.a.WelcomePageHandlerMapping      : Adding welcome page template: index
+2026-07-16T22:06:22.677-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8803 (http) with context path '/'
+2026-07-16T22:06:22.680-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] c.S.DeporPlaza.DeporPlazaApplication     : Started DeporPlazaApplication in 1.003 seconds (process running for 110.846)
+2026-07-16T22:06:22.681-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-07-16T22:10:33.169-05:00  INFO 5112 --- [DeporPlaza] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-07-16T22:10:33.172-05:00  INFO 5112 --- [DeporPlaza] [Thread-9] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-07-16T22:10:33.177-05:00  INFO 5112 --- [DeporPlaza] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-07-16T22:10:33.179-05:00  INFO 5112 --- [DeporPlaza] [Thread-9] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-07-16T22:10:33.180-05:00  INFO 5112 --- [DeporPlaza] [Thread-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2026-07-16T22:10:33.184-05:00  INFO 5112 --- [DeporPlaza] [Thread-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2026-07-16T22:10:33.269-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] c.S.DeporPlaza.DeporPlazaApplication     : Starting DeporPlazaApplication using Java 21.0.8 with PID 5112 (C:\Users\JOSE-PC\PROYECTOS SPRING\DeporPlaza V1\DeporPlaza\target\classes started by JOSE-PC in C:\Users\JOSE-PC\PROYECTOS SPRING\DeporPlaza V1\DeporPlaza)
+2026-07-16T22:10:33.270-05:00 DEBUG 5112 --- [DeporPlaza] [restartedMain] c.S.DeporPlaza.DeporPlazaApplication     : Running with Spring Boot v4.0.6, Spring v7.0.7
+2026-07-16T22:10:33.270-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] c.S.DeporPlaza.DeporPlazaApplication     : No active profile set, falling back to 1 default profile: "default"
+2026-07-16T22:10:33.400-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-07-16T22:10:33.423-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21 ms. Found 6 JPA repository interfaces.
+2026-07-16T22:10:33.488-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8803 (http)
+2026-07-16T22:10:33.489-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-07-16T22:10:33.489-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-07-16T22:10:33.513-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 241 ms
+2026-07-16T22:10:33.543-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-07-16T22:10:33.575-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-07-16T22:10:33.577-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2026-07-16T22:10:33.581-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-4 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6286d290
+2026-07-16T22:10:33.582-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2026-07-16T22:10:33.584-05:00  WARN 5112 --- [DeporPlaza] [restartedMain] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-07-16T22:10:33.585-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/bd_deporplaza]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: bd_deporplaza/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-07-16T22:10:33.658-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-07-16T22:10:33.848-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-07-16T22:10:33.955-05:00  WARN 5112 --- [DeporPlaza] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-07-16T22:10:33.969-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name usuarioDetailsService
+2026-07-16T22:10:34.013-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] o.s.b.w.a.WelcomePageHandlerMapping      : Adding welcome page template: index
+2026-07-16T22:10:34.051-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8803 (http) with context path '/'
+2026-07-16T22:10:34.054-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] c.S.DeporPlaza.DeporPlazaApplication     : Started DeporPlazaApplication in 0.805 seconds (process running for 362.22)
+2026-07-16T22:10:34.055-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-07-16T22:10:56.057-05:00  INFO 5112 --- [DeporPlaza] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-07-16T22:10:56.058-05:00  INFO 5112 --- [DeporPlaza] [Thread-13] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-07-16T22:10:56.064-05:00  INFO 5112 --- [DeporPlaza] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-07-16T22:10:56.066-05:00  INFO 5112 --- [DeporPlaza] [Thread-13] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-07-16T22:10:56.068-05:00  INFO 5112 --- [DeporPlaza] [Thread-13] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2026-07-16T22:10:56.079-05:00  INFO 5112 --- [DeporPlaza] [Thread-13] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+2026-07-16T22:10:56.177-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] c.S.DeporPlaza.DeporPlazaApplication     : Starting DeporPlazaApplication using Java 21.0.8 with PID 5112 (C:\Users\JOSE-PC\PROYECTOS SPRING\DeporPlaza V1\DeporPlaza\target\classes started by JOSE-PC in C:\Users\JOSE-PC\PROYECTOS SPRING\DeporPlaza V1\DeporPlaza)
+2026-07-16T22:10:56.178-05:00 DEBUG 5112 --- [DeporPlaza] [restartedMain] c.S.DeporPlaza.DeporPlazaApplication     : Running with Spring Boot v4.0.6, Spring v7.0.7
+2026-07-16T22:10:56.178-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] c.S.DeporPlaza.DeporPlazaApplication     : No active profile set, falling back to 1 default profile: "default"
+2026-07-16T22:10:56.394-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-07-16T22:10:56.413-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 6 JPA repository interfaces.
+2026-07-16T22:10:56.486-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8803 (http)
+2026-07-16T22:10:56.487-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-07-16T22:10:56.488-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-07-16T22:10:56.506-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 326 ms
+2026-07-16T22:10:56.535-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-07-16T22:10:56.563-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-07-16T22:10:56.564-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
+2026-07-16T22:10:56.567-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-5 - Added connection com.mysql.cj.jdbc.ConnectionImpl@72c869e1
+2026-07-16T22:10:56.568-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
+2026-07-16T22:10:56.569-05:00  WARN 5112 --- [DeporPlaza] [restartedMain] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-07-16T22:10:56.571-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/bd_deporplaza]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: bd_deporplaza/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-07-16T22:10:56.671-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-07-16T22:10:56.839-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-07-16T22:10:56.925-05:00  WARN 5112 --- [DeporPlaza] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-07-16T22:10:56.937-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name usuarioDetailsService
+2026-07-16T22:10:56.966-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] o.s.b.w.a.WelcomePageHandlerMapping      : Adding welcome page template: index
+2026-07-16T22:10:56.997-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8803 (http) with context path '/'
+2026-07-16T22:10:56.999-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] c.S.DeporPlaza.DeporPlazaApplication     : Started DeporPlazaApplication in 0.851 seconds (process running for 385.165)
+2026-07-16T22:10:57.000-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-07-16T22:12:55.640-05:00  INFO 5112 --- [DeporPlaza] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-07-16T22:12:55.641-05:00  INFO 5112 --- [DeporPlaza] [Thread-17] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-07-16T22:12:55.651-05:00  INFO 5112 --- [DeporPlaza] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-07-16T22:12:55.656-05:00  INFO 5112 --- [DeporPlaza] [Thread-17] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-07-16T22:12:55.658-05:00  INFO 5112 --- [DeporPlaza] [Thread-17] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown initiated...
+2026-07-16T22:12:55.663-05:00  INFO 5112 --- [DeporPlaza] [Thread-17] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown completed.
+2026-07-16T22:12:55.808-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] c.S.DeporPlaza.DeporPlazaApplication     : Starting DeporPlazaApplication using Java 21.0.8 with PID 5112 (C:\Users\JOSE-PC\PROYECTOS SPRING\DeporPlaza V1\DeporPlaza\target\classes started by JOSE-PC in C:\Users\JOSE-PC\PROYECTOS SPRING\DeporPlaza V1\DeporPlaza)
+2026-07-16T22:12:55.809-05:00 DEBUG 5112 --- [DeporPlaza] [restartedMain] c.S.DeporPlaza.DeporPlazaApplication     : Running with Spring Boot v4.0.6, Spring v7.0.7
+2026-07-16T22:12:55.809-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] c.S.DeporPlaza.DeporPlazaApplication     : No active profile set, falling back to 1 default profile: "default"
+2026-07-16T22:12:55.987-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-07-16T22:12:56.017-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 28 ms. Found 6 JPA repository interfaces.
+2026-07-16T22:12:56.118-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8803 (http)
+2026-07-16T22:12:56.118-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-07-16T22:12:56.119-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-07-16T22:12:56.154-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 342 ms
+2026-07-16T22:12:56.191-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-07-16T22:12:56.231-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-07-16T22:12:56.233-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Starting...
+2026-07-16T22:12:56.240-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-6 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3d933db0
+2026-07-16T22:12:56.240-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Start completed.
+2026-07-16T22:12:56.242-05:00  WARN 5112 --- [DeporPlaza] [restartedMain] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-07-16T22:12:56.243-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/bd_deporplaza]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: bd_deporplaza/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-07-16T22:12:56.319-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-07-16T22:12:56.551-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-07-16T22:12:56.681-05:00  WARN 5112 --- [DeporPlaza] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-07-16T22:12:56.698-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name usuarioDetailsService
+2026-07-16T22:12:56.730-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] o.s.b.w.a.WelcomePageHandlerMapping      : Adding welcome page template: index
+2026-07-16T22:12:56.758-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8803 (http) with context path '/'
+2026-07-16T22:12:56.759-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] c.S.DeporPlaza.DeporPlazaApplication     : Started DeporPlazaApplication in 1.002 seconds (process running for 504.926)
+2026-07-16T22:12:56.761-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-07-16T22:13:00.260-05:00  INFO 5112 --- [DeporPlaza] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-07-16T22:13:00.261-05:00  INFO 5112 --- [DeporPlaza] [Thread-21] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-07-16T22:13:00.266-05:00  INFO 5112 --- [DeporPlaza] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-07-16T22:13:00.268-05:00  INFO 5112 --- [DeporPlaza] [Thread-21] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-07-16T22:13:00.268-05:00  INFO 5112 --- [DeporPlaza] [Thread-21] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown initiated...
+2026-07-16T22:13:00.270-05:00  INFO 5112 --- [DeporPlaza] [Thread-21] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown completed.
+2026-07-16T22:13:00.371-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] c.S.DeporPlaza.DeporPlazaApplication     : Starting DeporPlazaApplication using Java 21.0.8 with PID 5112 (C:\Users\JOSE-PC\PROYECTOS SPRING\DeporPlaza V1\DeporPlaza\target\classes started by JOSE-PC in C:\Users\JOSE-PC\PROYECTOS SPRING\DeporPlaza V1\DeporPlaza)
+2026-07-16T22:13:00.371-05:00 DEBUG 5112 --- [DeporPlaza] [restartedMain] c.S.DeporPlaza.DeporPlazaApplication     : Running with Spring Boot v4.0.6, Spring v7.0.7
+2026-07-16T22:13:00.372-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] c.S.DeporPlaza.DeporPlazaApplication     : No active profile set, falling back to 1 default profile: "default"
+2026-07-16T22:13:00.550-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-07-16T22:13:00.575-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 23 ms. Found 6 JPA repository interfaces.
+2026-07-16T22:13:00.627-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8803 (http)
+2026-07-16T22:13:00.628-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-07-16T22:13:00.628-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-07-16T22:13:00.643-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 269 ms
+2026-07-16T22:13:00.663-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-07-16T22:13:00.682-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-07-16T22:13:00.683-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Starting...
+2026-07-16T22:13:00.686-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-7 - Added connection com.mysql.cj.jdbc.ConnectionImpl@78aa8765
+2026-07-16T22:13:00.687-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Start completed.
+2026-07-16T22:13:00.688-05:00  WARN 5112 --- [DeporPlaza] [restartedMain] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-07-16T22:13:00.689-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/bd_deporplaza]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: bd_deporplaza/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-07-16T22:13:00.743-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-07-16T22:13:00.911-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-07-16T22:13:00.992-05:00  WARN 5112 --- [DeporPlaza] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-07-16T22:13:01.002-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name usuarioDetailsService
+2026-07-16T22:13:01.030-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] o.s.b.w.a.WelcomePageHandlerMapping      : Adding welcome page template: index
+2026-07-16T22:13:01.061-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8803 (http) with context path '/'
+2026-07-16T22:13:01.063-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] c.S.DeporPlaza.DeporPlazaApplication     : Started DeporPlazaApplication in 0.711 seconds (process running for 509.229)
+2026-07-16T22:13:01.063-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-07-16T22:13:33.369-05:00  INFO 5112 --- [DeporPlaza] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-07-16T22:13:33.370-05:00  INFO 5112 --- [DeporPlaza] [Thread-25] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-07-16T22:13:33.375-05:00  INFO 5112 --- [DeporPlaza] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-07-16T22:13:33.376-05:00  INFO 5112 --- [DeporPlaza] [Thread-25] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-07-16T22:13:33.376-05:00  INFO 5112 --- [DeporPlaza] [Thread-25] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown initiated...
+2026-07-16T22:13:33.378-05:00  INFO 5112 --- [DeporPlaza] [Thread-25] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown completed.
+2026-07-16T22:13:33.454-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] c.S.DeporPlaza.DeporPlazaApplication     : Starting DeporPlazaApplication using Java 21.0.8 with PID 5112 (C:\Users\JOSE-PC\PROYECTOS SPRING\DeporPlaza V1\DeporPlaza\target\classes started by JOSE-PC in C:\Users\JOSE-PC\PROYECTOS SPRING\DeporPlaza V1\DeporPlaza)
+2026-07-16T22:13:33.454-05:00 DEBUG 5112 --- [DeporPlaza] [restartedMain] c.S.DeporPlaza.DeporPlazaApplication     : Running with Spring Boot v4.0.6, Spring v7.0.7
+2026-07-16T22:13:33.454-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] c.S.DeporPlaza.DeporPlazaApplication     : No active profile set, falling back to 1 default profile: "default"
+2026-07-16T22:13:33.571-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-07-16T22:13:33.591-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18 ms. Found 6 JPA repository interfaces.
+2026-07-16T22:13:33.653-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8803 (http)
+2026-07-16T22:13:33.656-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-07-16T22:13:33.656-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-07-16T22:13:33.675-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 218 ms
+2026-07-16T22:13:33.693-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-07-16T22:13:33.711-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-07-16T22:13:33.713-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Starting...
+2026-07-16T22:13:33.717-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-8 - Added connection com.mysql.cj.jdbc.ConnectionImpl@e61120f
+2026-07-16T22:13:33.718-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Start completed.
+2026-07-16T22:13:33.719-05:00  WARN 5112 --- [DeporPlaza] [restartedMain] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-07-16T22:13:33.720-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/bd_deporplaza]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: bd_deporplaza/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-07-16T22:13:33.789-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-07-16T22:13:33.975-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-07-16T22:13:34.069-05:00  WARN 5112 --- [DeporPlaza] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-07-16T22:13:34.080-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name usuarioDetailsService
+2026-07-16T22:13:34.107-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] o.s.b.w.a.WelcomePageHandlerMapping      : Adding welcome page template: index
+2026-07-16T22:13:34.138-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8803 (http) with context path '/'
+2026-07-16T22:13:34.139-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] c.S.DeporPlaza.DeporPlazaApplication     : Started DeporPlazaApplication in 0.704 seconds (process running for 542.306)
+2026-07-16T22:13:34.140-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-07-16T22:14:23.937-05:00  INFO 5112 --- [DeporPlaza] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-07-16T22:14:23.938-05:00  INFO 5112 --- [DeporPlaza] [Thread-29] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-07-16T22:14:23.944-05:00  INFO 5112 --- [DeporPlaza] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-07-16T22:14:23.946-05:00  INFO 5112 --- [DeporPlaza] [Thread-29] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-07-16T22:14:23.947-05:00  INFO 5112 --- [DeporPlaza] [Thread-29] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown initiated...
+2026-07-16T22:14:23.948-05:00  INFO 5112 --- [DeporPlaza] [Thread-29] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown completed.
+2026-07-16T22:14:24.054-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] c.S.DeporPlaza.DeporPlazaApplication     : Starting DeporPlazaApplication using Java 21.0.8 with PID 5112 (C:\Users\JOSE-PC\PROYECTOS SPRING\DeporPlaza V1\DeporPlaza\target\classes started by JOSE-PC in C:\Users\JOSE-PC\PROYECTOS SPRING\DeporPlaza V1\DeporPlaza)
+2026-07-16T22:14:24.055-05:00 DEBUG 5112 --- [DeporPlaza] [restartedMain] c.S.DeporPlaza.DeporPlazaApplication     : Running with Spring Boot v4.0.6, Spring v7.0.7
+2026-07-16T22:14:24.055-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] c.S.DeporPlaza.DeporPlazaApplication     : No active profile set, falling back to 1 default profile: "default"
+2026-07-16T22:14:24.265-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-07-16T22:14:24.287-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20 ms. Found 6 JPA repository interfaces.
+2026-07-16T22:14:24.369-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8803 (http)
+2026-07-16T22:14:24.370-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-07-16T22:14:24.371-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-07-16T22:14:24.393-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 335 ms
+2026-07-16T22:14:24.414-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-07-16T22:14:24.436-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-07-16T22:14:24.437-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Starting...
+2026-07-16T22:14:24.441-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-9 - Added connection com.mysql.cj.jdbc.ConnectionImpl@703d9a26
+2026-07-16T22:14:24.441-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Start completed.
+2026-07-16T22:14:24.443-05:00  WARN 5112 --- [DeporPlaza] [restartedMain] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-07-16T22:14:24.444-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/bd_deporplaza]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: bd_deporplaza/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-07-16T22:14:24.514-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-07-16T22:14:24.716-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-07-16T22:14:24.833-05:00  WARN 5112 --- [DeporPlaza] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-07-16T22:14:24.860-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name usuarioDetailsService
+2026-07-16T22:14:24.900-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] o.s.b.w.a.WelcomePageHandlerMapping      : Adding welcome page template: index
+2026-07-16T22:14:24.932-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8803 (http) with context path '/'
+2026-07-16T22:14:24.934-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] c.S.DeporPlaza.DeporPlazaApplication     : Started DeporPlazaApplication in 0.922 seconds (process running for 593.1)
+2026-07-16T22:14:24.935-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-07-16T22:19:02.843-05:00  INFO 13324 --- [DeporPlaza] [restartedMain] c.S.DeporPlaza.DeporPlazaApplication     : Starting DeporPlazaApplication using Java 21.0.8 with PID 13324 (C:\Users\JOSE-PC\PROYECTOS SPRING\DeporPlaza V1\DeporPlaza\target\classes started by JOSE-PC in C:\Users\JOSE-PC\PROYECTOS SPRING\DeporPlaza V1\DeporPlaza)
+2026-07-16T22:19:02.845-05:00 DEBUG 13324 --- [DeporPlaza] [restartedMain] c.S.DeporPlaza.DeporPlazaApplication     : Running with Spring Boot v4.0.6, Spring v7.0.7
+2026-07-16T22:19:02.846-05:00  INFO 13324 --- [DeporPlaza] [restartedMain] c.S.DeporPlaza.DeporPlazaApplication     : No active profile set, falling back to 1 default profile: "default"
+2026-07-16T22:19:02.893-05:00  INFO 13324 --- [DeporPlaza] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-07-16T22:19:02.893-05:00  INFO 13324 --- [DeporPlaza] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-07-16T22:19:03.548-05:00  INFO 13324 --- [DeporPlaza] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-07-16T22:19:03.613-05:00  INFO 13324 --- [DeporPlaza] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 56 ms. Found 6 JPA repository interfaces.
+2026-07-16T22:19:04.207-05:00  INFO 13324 --- [DeporPlaza] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8803 (http)
+2026-07-16T22:19:04.223-05:00  INFO 13324 --- [DeporPlaza] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-07-16T22:19:04.223-05:00  INFO 13324 --- [DeporPlaza] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-07-16T22:19:04.274-05:00  INFO 13324 --- [DeporPlaza] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1380 ms
+2026-07-16T22:19:04.480-05:00  INFO 13324 --- [DeporPlaza] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-07-16T22:19:04.540-05:00  INFO 13324 --- [DeporPlaza] [restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-07-16T22:19:04.973-05:00  INFO 13324 --- [DeporPlaza] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-07-16T22:19:05.008-05:00  INFO 13324 --- [DeporPlaza] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-07-16T22:19:05.178-05:00  INFO 13324 --- [DeporPlaza] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@67799696
+2026-07-16T22:19:05.181-05:00  INFO 13324 --- [DeporPlaza] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-07-16T22:19:05.239-05:00  WARN 13324 --- [DeporPlaza] [restartedMain] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-07-16T22:19:05.263-05:00  INFO 13324 --- [DeporPlaza] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/bd_deporplaza]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: bd_deporplaza/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-07-16T22:19:06.230-05:00  INFO 13324 --- [DeporPlaza] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-07-16T22:19:06.485-05:00  INFO 5112 --- [DeporPlaza] [http-nio-8803-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-07-16T22:19:06.485-05:00  INFO 5112 --- [DeporPlaza] [http-nio-8803-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-07-16T22:19:06.487-05:00  INFO 5112 --- [DeporPlaza] [http-nio-8803-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-07-16T22:19:06.488-05:00  INFO 13324 --- [DeporPlaza] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-07-16T22:19:06.572-05:00  INFO 13324 --- [DeporPlaza] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-07-16T22:19:07.689-05:00  WARN 13324 --- [DeporPlaza] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-07-16T22:19:07.775-05:00  INFO 13324 --- [DeporPlaza] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name usuarioDetailsService
+2026-07-16T22:19:07.993-05:00  INFO 13324 --- [DeporPlaza] [restartedMain] o.s.b.w.a.WelcomePageHandlerMapping      : Adding welcome page template: index
+2026-07-16T22:19:08.298-05:00  WARN 13324 --- [DeporPlaza] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2026-07-16T22:19:08.300-05:00  INFO 13324 --- [DeporPlaza] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-07-16T22:19:08.303-05:00  INFO 13324 --- [DeporPlaza] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-07-16T22:19:08.311-05:00  INFO 13324 --- [DeporPlaza] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-07-16T22:19:08.322-05:00  INFO 13324 --- [DeporPlaza] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-07-16T22:19:08.341-05:00 ERROR 13324 --- [DeporPlaza] [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8803 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8803 or configure this application to listen on another port.
+
+2026-07-16T22:19:24.234-05:00  INFO 5112 --- [DeporPlaza] [http-nio-8803-exec-6] c.S.DeporPlaza.service.UsuarioService    : Buscando existencia de usuario con DNI registrado: 31683126
+2026-07-16T22:19:35.472-05:00  INFO 5112 --- [DeporPlaza] [http-nio-8803-exec-9] c.S.DeporPlaza.service.UsuarioService    : Buscando usuario con dni: 31683126
+2026-07-16T22:19:35.541-05:00  INFO 5112 --- [DeporPlaza] [http-nio-8803-exec-9] c.S.DeporPlaza.service.ReservaService    : Reserva registrada correctamente. Usuario: 31683126, Campo: null, Fecha: 2026-07-17
+2026-07-16T22:21:01.633-05:00  INFO 5112 --- [DeporPlaza] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-07-16T22:21:01.635-05:00  INFO 5112 --- [DeporPlaza] [Thread-33] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-07-16T22:21:01.638-05:00  INFO 5112 --- [DeporPlaza] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-07-16T22:21:01.640-05:00  INFO 5112 --- [DeporPlaza] [Thread-33] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-07-16T22:21:01.640-05:00  INFO 5112 --- [DeporPlaza] [Thread-33] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Shutdown initiated...
+2026-07-16T22:21:01.641-05:00  INFO 5112 --- [DeporPlaza] [Thread-33] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Shutdown completed.
+2026-07-16T22:21:01.749-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] c.S.DeporPlaza.DeporPlazaApplication     : Starting DeporPlazaApplication using Java 21.0.8 with PID 5112 (C:\Users\JOSE-PC\PROYECTOS SPRING\DeporPlaza V1\DeporPlaza\target\classes started by JOSE-PC in C:\Users\JOSE-PC\PROYECTOS SPRING\DeporPlaza V1\DeporPlaza)
+2026-07-16T22:21:01.749-05:00 DEBUG 5112 --- [DeporPlaza] [restartedMain] c.S.DeporPlaza.DeporPlazaApplication     : Running with Spring Boot v4.0.6, Spring v7.0.7
+2026-07-16T22:21:01.750-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] c.S.DeporPlaza.DeporPlazaApplication     : No active profile set, falling back to 1 default profile: "default"
+2026-07-16T22:21:01.881-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-07-16T22:21:01.900-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 16 ms. Found 6 JPA repository interfaces.
+2026-07-16T22:21:02.002-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8803 (http)
+2026-07-16T22:21:02.003-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-07-16T22:21:02.003-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-07-16T22:21:02.041-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 290 ms
+2026-07-16T22:21:02.056-05:00  WARN 5112 --- [DeporPlaza] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Cannot deserialize session attribute [SPRING_SECURITY_CONTEXT] for session [7E4EE466B2AE1CE13892F1D5AA4F13EE]
+2026-07-16T22:21:02.071-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-07-16T22:21:02.103-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-07-16T22:21:02.105-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Starting...
+2026-07-16T22:21:02.111-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-10 - Added connection com.mysql.cj.jdbc.ConnectionImpl@79be6d70
+2026-07-16T22:21:02.111-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Start completed.
+2026-07-16T22:21:02.113-05:00  WARN 5112 --- [DeporPlaza] [restartedMain] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-07-16T22:21:02.115-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/bd_deporplaza]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: bd_deporplaza/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-07-16T22:21:02.185-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-07-16T22:21:02.352-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-07-16T22:21:02.432-05:00  WARN 5112 --- [DeporPlaza] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-07-16T22:21:02.442-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name usuarioDetailsService
+2026-07-16T22:21:02.467-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] o.s.b.w.a.WelcomePageHandlerMapping      : Adding welcome page template: index
+2026-07-16T22:21:02.492-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8803 (http) with context path '/'
+2026-07-16T22:21:02.493-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] c.S.DeporPlaza.DeporPlazaApplication     : Started DeporPlazaApplication in 0.761 seconds (process running for 990.66)
+2026-07-16T22:21:02.495-05:00  INFO 5112 --- [DeporPlaza] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-07-16T22:21:04.628-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] c.S.DeporPlaza.DeporPlazaApplication     : Starting DeporPlazaApplication using Java 21.0.8 with PID 21976 (C:\Users\JOSE-PC\PROYECTOS SPRING\DeporPlaza V1\DeporPlaza\target\classes started by JOSE-PC in c:\Users\JOSE-PC\PROYECTOS SPRING\DeporPlaza V1\DeporPlaza)
+2026-07-16T22:21:04.630-05:00 DEBUG 21976 --- [DeporPlaza] [restartedMain] c.S.DeporPlaza.DeporPlazaApplication     : Running with Spring Boot v4.0.6, Spring v7.0.7
+2026-07-16T22:21:04.631-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] c.S.DeporPlaza.DeporPlazaApplication     : No active profile set, falling back to 1 default profile: "default"
+2026-07-16T22:21:04.688-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-07-16T22:21:04.689-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-07-16T22:21:05.411-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-07-16T22:21:05.472-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 52 ms. Found 6 JPA repository interfaces.
+2026-07-16T22:21:06.065-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8803 (http)
+2026-07-16T22:21:06.080-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-07-16T22:21:06.081-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-07-16T22:21:06.128-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1439 ms
+2026-07-16T22:21:06.305-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-07-16T22:21:06.350-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-07-16T22:21:06.793-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-07-16T22:21:06.828-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-07-16T22:21:06.969-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@67799696
+2026-07-16T22:21:06.971-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-07-16T22:21:07.016-05:00  WARN 21976 --- [DeporPlaza] [restartedMain] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-07-16T22:21:07.036-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/bd_deporplaza]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: bd_deporplaza/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-07-16T22:21:07.758-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-07-16T22:21:07.978-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-07-16T22:21:08.056-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-07-16T22:21:09.090-05:00  WARN 21976 --- [DeporPlaza] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-07-16T22:21:09.185-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name usuarioDetailsService
+2026-07-16T22:21:09.389-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] o.s.b.w.a.WelcomePageHandlerMapping      : Adding welcome page template: index
+2026-07-16T22:21:09.716-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8803 (http) with context path '/'
+2026-07-16T22:21:09.722-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] c.S.DeporPlaza.DeporPlazaApplication     : Started DeporPlazaApplication in 5.545 seconds (process running for 5.991)
+2026-07-16T22:21:10.193-05:00  INFO 21976 --- [DeporPlaza] [http-nio-8803-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-07-16T22:21:10.193-05:00  INFO 21976 --- [DeporPlaza] [http-nio-8803-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-07-16T22:21:10.195-05:00  INFO 21976 --- [DeporPlaza] [http-nio-8803-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-07-16T22:21:18.263-05:00  INFO 21976 --- [DeporPlaza] [http-nio-8803-exec-3] c.S.DeporPlaza.service.UsuarioService    : Buscando existencia de usuario con DNI registrado: 31683126
+2026-07-16T22:21:28.666-05:00  INFO 21976 --- [DeporPlaza] [http-nio-8803-exec-6] c.S.DeporPlaza.service.UsuarioService    : Buscando usuario con dni: 31683126
+2026-07-16T22:21:28.708-05:00  INFO 21976 --- [DeporPlaza] [http-nio-8803-exec-6] c.S.DeporPlaza.service.ReservaService    : Reserva registrada correctamente. Usuario: 31683126, Campo: null, Fecha: 2026-07-17
+2026-07-16T22:22:38.564-05:00  INFO 21976 --- [DeporPlaza] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-07-16T22:22:38.568-05:00  INFO 21976 --- [DeporPlaza] [Thread-1] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-07-16T22:22:38.572-05:00  INFO 21976 --- [DeporPlaza] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-07-16T22:22:38.576-05:00  INFO 21976 --- [DeporPlaza] [Thread-1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-07-16T22:22:38.580-05:00  INFO 21976 --- [DeporPlaza] [Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-07-16T22:22:38.587-05:00  INFO 21976 --- [DeporPlaza] [Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-07-16T22:22:38.699-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] c.S.DeporPlaza.DeporPlazaApplication     : Starting DeporPlazaApplication using Java 21.0.8 with PID 21976 (C:\Users\JOSE-PC\PROYECTOS SPRING\DeporPlaza V1\DeporPlaza\target\classes started by JOSE-PC in c:\Users\JOSE-PC\PROYECTOS SPRING\DeporPlaza V1\DeporPlaza)
+2026-07-16T22:22:38.699-05:00 DEBUG 21976 --- [DeporPlaza] [restartedMain] c.S.DeporPlaza.DeporPlazaApplication     : Running with Spring Boot v4.0.6, Spring v7.0.7
+2026-07-16T22:22:38.700-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] c.S.DeporPlaza.DeporPlazaApplication     : No active profile set, falling back to 1 default profile: "default"
+2026-07-16T22:22:38.919-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-07-16T22:22:38.942-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21 ms. Found 6 JPA repository interfaces.
+2026-07-16T22:22:39.029-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8803 (http)
+2026-07-16T22:22:39.030-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-07-16T22:22:39.031-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-07-16T22:22:39.054-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 352 ms
+2026-07-16T22:22:39.072-05:00  WARN 21976 --- [DeporPlaza] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Cannot deserialize session attribute [SPRING_SECURITY_CONTEXT] for session [806C6601F8FA9FA2E505FE9A75ECCC58]
+2026-07-16T22:22:39.073-05:00 ERROR 21976 --- [DeporPlaza] [restartedMain] o.a.catalina.session.StandardManager     : Exception loading sessions from persistent storage
+
+java.lang.ClassCastException: class java.io.ObjectStreamClass cannot be cast to class java.lang.String (java.io.ObjectStreamClass and java.lang.String are in module java.base of loader 'bootstrap')
+	at java.base/java.io.ObjectInputStream.readTypeString(ObjectInputStream.java:1839) ~[na:na]
+	at java.base/java.io.ObjectStreamClass.readNonProxy(ObjectStreamClass.java:709) ~[na:na]
+	at java.base/java.io.ObjectInputStream.readClassDescriptor(ObjectInputStream.java:1014) ~[na:na]
+	at java.base/java.io.ObjectInputStream.readNonProxyDesc(ObjectInputStream.java:2050) ~[na:na]
+	at java.base/java.io.ObjectInputStream.readClassDesc(ObjectInputStream.java:1927) ~[na:na]
+	at java.base/java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2252) ~[na:na]
+	at java.base/java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1762) ~[na:na]
+	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:540) ~[na:na]
+	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:498) ~[na:na]
+	at org.apache.catalina.session.StandardSession.doReadObject(StandardSession.java:1187) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at org.apache.catalina.session.StandardSession.readObjectData(StandardSession.java:821) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at org.apache.catalina.session.StandardManager.load(StandardManager.java:146) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at org.apache.catalina.session.StandardManager.startInternal(StandardManager.java:255) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4443) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1162) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1158) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:81) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:714) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:780) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1162) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1158) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:81) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:714) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:201) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:410) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:864) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:435) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at org.springframework.boot.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:131) ~[spring-boot-tomcat-4.0.6.jar:4.0.6]
+	at org.springframework.boot.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:110) ~[spring-boot-tomcat-4.0.6.jar:4.0.6]
+	at org.springframework.boot.tomcat.servlet.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:408) ~[spring-boot-tomcat-4.0.6.jar:4.0.6]
+	at org.springframework.boot.tomcat.servlet.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:166) ~[spring-boot-tomcat-4.0.6.jar:4.0.6]
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:190) ~[spring-boot-web-server-4.0.6.jar:4.0.6]
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:164) ~[spring-boot-web-server-4.0.6.jar:4.0.6]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:615) ~[spring-context-7.0.7.jar:7.0.7]
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-web-server-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-4.0.6.jar:4.0.6]
+	at com.Sistema.DeporPlaza.DeporPlazaApplication.main(DeporPlazaApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:52) ~[spring-boot-devtools-4.0.6.jar:4.0.6]
+
+2026-07-16T22:22:39.111-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-07-16T22:22:39.145-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-07-16T22:22:39.146-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2026-07-16T22:22:39.150-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3cad8090
+2026-07-16T22:22:39.151-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2026-07-16T22:22:39.153-05:00  WARN 21976 --- [DeporPlaza] [restartedMain] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-07-16T22:22:39.154-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/bd_deporplaza]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: bd_deporplaza/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-07-16T22:22:39.236-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-07-16T22:22:39.410-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-07-16T22:22:39.513-05:00  WARN 21976 --- [DeporPlaza] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-07-16T22:22:39.537-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name usuarioDetailsService
+2026-07-16T22:22:39.579-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] o.s.b.w.a.WelcomePageHandlerMapping      : Adding welcome page template: index
+2026-07-16T22:22:39.640-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8803 (http) with context path '/'
+2026-07-16T22:22:39.644-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] c.S.DeporPlaza.DeporPlazaApplication     : Started DeporPlazaApplication in 0.975 seconds (process running for 95.913)
+2026-07-16T22:22:39.646-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-07-16T22:22:42.319-05:00  INFO 21976 --- [DeporPlaza] [http-nio-8803-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-07-16T22:22:42.319-05:00  INFO 21976 --- [DeporPlaza] [http-nio-8803-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-07-16T22:22:42.321-05:00  INFO 21976 --- [DeporPlaza] [http-nio-8803-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-07-16T22:22:48.002-05:00  INFO 21976 --- [DeporPlaza] [http-nio-8803-exec-3] c.S.DeporPlaza.service.UsuarioService    : Buscando existencia de usuario con DNI registrado: 
+2026-07-16T22:22:50.476-05:00  INFO 21976 --- [DeporPlaza] [http-nio-8803-exec-5] c.S.DeporPlaza.service.UsuarioService    : Buscando existencia de usuario con DNI registrado: 31683126
+2026-07-16T22:22:59.281-05:00  INFO 21976 --- [DeporPlaza] [http-nio-8803-exec-6] c.S.DeporPlaza.service.UsuarioService    : Buscando usuario con dni: 31683126
+2026-07-16T22:22:59.302-05:00  INFO 21976 --- [DeporPlaza] [http-nio-8803-exec-6] c.S.DeporPlaza.service.ReservaService    : Reserva registrada correctamente. Usuario: 31683126, IdCampo: 1, Fecha: 2026-07-18
+2026-07-16T22:27:04.282-05:00 ERROR 21976 --- [DeporPlaza] [http-nio-8803-exec-2] c.S.DeporPlaza.service.UsuarioService    : Se intento un usuario con reservas registradas. Id del Usuario: 20
+2026-07-16T22:27:47.847-05:00 ERROR 21976 --- [DeporPlaza] [http-nio-8803-exec-5] c.S.DeporPlaza.service.UsuarioService    : Se intento un usuario con reservas registradas. Id del Usuario: 27
+2026-07-16T22:27:53.659-05:00  INFO 21976 --- [DeporPlaza] [http-nio-8803-exec-3] c.S.DeporPlaza.service.UsuarioService    : Usuario eliminado correctamente. IdUsuario: 26
+2026-07-16T22:33:49.992-05:00  INFO 21976 --- [DeporPlaza] [http-nio-8803-exec-7] c.S.DeporPlaza.service.ReservaService    : Reserva registrada correctamente. ID: 24, Nombre Campo: prueba, Precio por Hora: 5
+2026-07-16T22:35:13.034-05:00  INFO 21976 --- [DeporPlaza] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-07-16T22:35:13.037-05:00  INFO 21976 --- [DeporPlaza] [Thread-5] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-07-16T22:35:13.041-05:00  INFO 21976 --- [DeporPlaza] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-07-16T22:35:13.046-05:00  INFO 21976 --- [DeporPlaza] [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-07-16T22:35:13.047-05:00  INFO 21976 --- [DeporPlaza] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2026-07-16T22:35:13.051-05:00  INFO 21976 --- [DeporPlaza] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2026-07-16T22:35:13.137-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] c.S.DeporPlaza.DeporPlazaApplication     : Starting DeporPlazaApplication using Java 21.0.8 with PID 21976 (C:\Users\JOSE-PC\PROYECTOS SPRING\DeporPlaza V1\DeporPlaza\target\classes started by JOSE-PC in c:\Users\JOSE-PC\PROYECTOS SPRING\DeporPlaza V1\DeporPlaza)
+2026-07-16T22:35:13.138-05:00 DEBUG 21976 --- [DeporPlaza] [restartedMain] c.S.DeporPlaza.DeporPlazaApplication     : Running with Spring Boot v4.0.6, Spring v7.0.7
+2026-07-16T22:35:13.138-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] c.S.DeporPlaza.DeporPlazaApplication     : No active profile set, falling back to 1 default profile: "default"
+2026-07-16T22:35:13.332-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-07-16T22:35:13.355-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21 ms. Found 6 JPA repository interfaces.
+2026-07-16T22:35:13.428-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8803 (http)
+2026-07-16T22:35:13.429-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-07-16T22:35:13.429-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-07-16T22:35:13.452-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 312 ms
+2026-07-16T22:35:13.466-05:00  WARN 21976 --- [DeporPlaza] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Cannot deserialize session attribute [SPRING_SECURITY_CONTEXT] for session [C703A033E70BDF643DD66D493FDFBFEB]
+2026-07-16T22:35:13.467-05:00 ERROR 21976 --- [DeporPlaza] [restartedMain] o.a.catalina.session.StandardManager     : Exception loading sessions from persistent storage
+
+java.lang.ClassCastException: class java.io.ObjectStreamClass cannot be cast to class java.lang.String (java.io.ObjectStreamClass and java.lang.String are in module java.base of loader 'bootstrap')
+	at java.base/java.io.ObjectInputStream.readTypeString(ObjectInputStream.java:1839) ~[na:na]
+	at java.base/java.io.ObjectStreamClass.readNonProxy(ObjectStreamClass.java:709) ~[na:na]
+	at java.base/java.io.ObjectInputStream.readClassDescriptor(ObjectInputStream.java:1014) ~[na:na]
+	at java.base/java.io.ObjectInputStream.readNonProxyDesc(ObjectInputStream.java:2050) ~[na:na]
+	at java.base/java.io.ObjectInputStream.readClassDesc(ObjectInputStream.java:1927) ~[na:na]
+	at java.base/java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2252) ~[na:na]
+	at java.base/java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1762) ~[na:na]
+	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:540) ~[na:na]
+	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:498) ~[na:na]
+	at org.apache.catalina.session.StandardSession.doReadObject(StandardSession.java:1187) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at org.apache.catalina.session.StandardSession.readObjectData(StandardSession.java:821) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at org.apache.catalina.session.StandardManager.load(StandardManager.java:146) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at org.apache.catalina.session.StandardManager.startInternal(StandardManager.java:255) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4443) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1162) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1158) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:81) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:714) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:780) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1162) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1158) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:81) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:714) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:201) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:410) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:864) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:435) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at org.springframework.boot.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:131) ~[spring-boot-tomcat-4.0.6.jar:4.0.6]
+	at org.springframework.boot.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:110) ~[spring-boot-tomcat-4.0.6.jar:4.0.6]
+	at org.springframework.boot.tomcat.servlet.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:408) ~[spring-boot-tomcat-4.0.6.jar:4.0.6]
+	at org.springframework.boot.tomcat.servlet.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:166) ~[spring-boot-tomcat-4.0.6.jar:4.0.6]
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:190) ~[spring-boot-web-server-4.0.6.jar:4.0.6]
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:164) ~[spring-boot-web-server-4.0.6.jar:4.0.6]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:615) ~[spring-context-7.0.7.jar:7.0.7]
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-web-server-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-4.0.6.jar:4.0.6]
+	at com.Sistema.DeporPlaza.DeporPlazaApplication.main(DeporPlazaApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:52) ~[spring-boot-devtools-4.0.6.jar:4.0.6]
+
+2026-07-16T22:35:13.489-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-07-16T22:35:13.511-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-07-16T22:35:13.513-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2026-07-16T22:35:13.516-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6834a157
+2026-07-16T22:35:13.517-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2026-07-16T22:35:13.518-05:00  WARN 21976 --- [DeporPlaza] [restartedMain] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-07-16T22:35:13.519-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/bd_deporplaza]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: bd_deporplaza/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-07-16T22:35:13.591-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-07-16T22:35:13.748-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-07-16T22:35:13.873-05:00  WARN 21976 --- [DeporPlaza] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-07-16T22:35:13.893-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name usuarioDetailsService
+2026-07-16T22:35:13.928-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] o.s.b.w.a.WelcomePageHandlerMapping      : Adding welcome page template: index
+2026-07-16T22:35:13.999-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8803 (http) with context path '/'
+2026-07-16T22:35:14.001-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] c.S.DeporPlaza.DeporPlazaApplication     : Started DeporPlazaApplication in 0.887 seconds (process running for 850.271)
+2026-07-16T22:35:14.002-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-07-16T22:35:14.076-05:00  INFO 21976 --- [DeporPlaza] [http-nio-8803-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-07-16T22:35:14.077-05:00  INFO 21976 --- [DeporPlaza] [http-nio-8803-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-07-16T22:35:14.079-05:00  INFO 21976 --- [DeporPlaza] [http-nio-8803-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-07-16T22:35:39.302-05:00  INFO 21976 --- [DeporPlaza] [http-nio-8803-exec-4] c.S.DeporPlaza.service.CampoService      : Reserva registrada correctamente. ID: 25, Nombre Campo: prueba2, Precio por Hora: 5
+2026-07-16T22:36:27.401-05:00  INFO 21976 --- [DeporPlaza] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-07-16T22:36:27.403-05:00  INFO 21976 --- [DeporPlaza] [Thread-9] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-07-16T22:36:27.408-05:00  INFO 21976 --- [DeporPlaza] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-07-16T22:36:27.410-05:00  INFO 21976 --- [DeporPlaza] [Thread-9] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-07-16T22:36:27.411-05:00  INFO 21976 --- [DeporPlaza] [Thread-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2026-07-16T22:36:27.412-05:00  INFO 21976 --- [DeporPlaza] [Thread-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2026-07-16T22:36:27.490-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] c.S.DeporPlaza.DeporPlazaApplication     : Starting DeporPlazaApplication using Java 21.0.8 with PID 21976 (C:\Users\JOSE-PC\PROYECTOS SPRING\DeporPlaza V1\DeporPlaza\target\classes started by JOSE-PC in c:\Users\JOSE-PC\PROYECTOS SPRING\DeporPlaza V1\DeporPlaza)
+2026-07-16T22:36:27.490-05:00 DEBUG 21976 --- [DeporPlaza] [restartedMain] c.S.DeporPlaza.DeporPlazaApplication     : Running with Spring Boot v4.0.6, Spring v7.0.7
+2026-07-16T22:36:27.490-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] c.S.DeporPlaza.DeporPlazaApplication     : No active profile set, falling back to 1 default profile: "default"
+2026-07-16T22:36:27.653-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-07-16T22:36:27.680-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 26 ms. Found 6 JPA repository interfaces.
+2026-07-16T22:36:27.773-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8803 (http)
+2026-07-16T22:36:27.774-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-07-16T22:36:27.774-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-07-16T22:36:27.804-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 312 ms
+2026-07-16T22:36:27.823-05:00  WARN 21976 --- [DeporPlaza] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Cannot deserialize session attribute [SPRING_SECURITY_CONTEXT] for session [D7056336FB99935EAEDA1B19E75B3240]
+2026-07-16T22:36:27.824-05:00 ERROR 21976 --- [DeporPlaza] [restartedMain] o.a.catalina.session.StandardManager     : Exception loading sessions from persistent storage
+
+java.lang.ClassCastException: class java.io.ObjectStreamClass cannot be cast to class java.lang.String (java.io.ObjectStreamClass and java.lang.String are in module java.base of loader 'bootstrap')
+	at java.base/java.io.ObjectInputStream.readTypeString(ObjectInputStream.java:1839) ~[na:na]
+	at java.base/java.io.ObjectStreamClass.readNonProxy(ObjectStreamClass.java:709) ~[na:na]
+	at java.base/java.io.ObjectInputStream.readClassDescriptor(ObjectInputStream.java:1014) ~[na:na]
+	at java.base/java.io.ObjectInputStream.readNonProxyDesc(ObjectInputStream.java:2050) ~[na:na]
+	at java.base/java.io.ObjectInputStream.readClassDesc(ObjectInputStream.java:1927) ~[na:na]
+	at java.base/java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2252) ~[na:na]
+	at java.base/java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1762) ~[na:na]
+	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:540) ~[na:na]
+	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:498) ~[na:na]
+	at org.apache.catalina.session.StandardSession.doReadObject(StandardSession.java:1187) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at org.apache.catalina.session.StandardSession.readObjectData(StandardSession.java:821) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at org.apache.catalina.session.StandardManager.load(StandardManager.java:146) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at org.apache.catalina.session.StandardManager.startInternal(StandardManager.java:255) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4443) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1162) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1158) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:81) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:714) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:780) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1162) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1158) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:81) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:714) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:201) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:410) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:864) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:435) ~[tomcat-embed-core-11.0.21.jar:11.0.21]
+	at org.springframework.boot.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:131) ~[spring-boot-tomcat-4.0.6.jar:4.0.6]
+	at org.springframework.boot.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:110) ~[spring-boot-tomcat-4.0.6.jar:4.0.6]
+	at org.springframework.boot.tomcat.servlet.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:408) ~[spring-boot-tomcat-4.0.6.jar:4.0.6]
+	at org.springframework.boot.tomcat.servlet.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:166) ~[spring-boot-tomcat-4.0.6.jar:4.0.6]
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:190) ~[spring-boot-web-server-4.0.6.jar:4.0.6]
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:164) ~[spring-boot-web-server-4.0.6.jar:4.0.6]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:615) ~[spring-context-7.0.7.jar:7.0.7]
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-web-server-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-4.0.6.jar:4.0.6]
+	at com.Sistema.DeporPlaza.DeporPlazaApplication.main(DeporPlazaApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:52) ~[spring-boot-devtools-4.0.6.jar:4.0.6]
+
+2026-07-16T22:36:27.868-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-07-16T22:36:27.901-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-07-16T22:36:27.902-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2026-07-16T22:36:27.906-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-4 - Added connection com.mysql.cj.jdbc.ConnectionImpl@22408ebf
+2026-07-16T22:36:27.907-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2026-07-16T22:36:27.908-05:00  WARN 21976 --- [DeporPlaza] [restartedMain] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-07-16T22:36:27.909-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/bd_deporplaza]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: bd_deporplaza/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-07-16T22:36:28.001-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-07-16T22:36:28.207-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-07-16T22:36:28.317-05:00  WARN 21976 --- [DeporPlaza] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-07-16T22:36:28.331-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name usuarioDetailsService
+2026-07-16T22:36:28.366-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] o.s.b.w.a.WelcomePageHandlerMapping      : Adding welcome page template: index
+2026-07-16T22:36:28.412-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8803 (http) with context path '/'
+2026-07-16T22:36:28.413-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] c.S.DeporPlaza.DeporPlazaApplication     : Started DeporPlazaApplication in 0.942 seconds (process running for 924.683)
+2026-07-16T22:36:28.416-05:00  INFO 21976 --- [DeporPlaza] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-07-16T22:36:32.013-05:00  INFO 21976 --- [DeporPlaza] [http-nio-8803-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-07-16T22:36:32.013-05:00  INFO 21976 --- [DeporPlaza] [http-nio-8803-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-07-16T22:36:32.014-05:00  INFO 21976 --- [DeporPlaza] [http-nio-8803-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-07-16T22:36:46.129-05:00  INFO 21976 --- [DeporPlaza] [http-nio-8803-exec-3] c.S.DeporPlaza.service.CampoService      : Campo registrado correctamente. ID: 26, Nombre Campo: prueba3, Precio por Hora: 5
+2026-07-16T23:10:04.643-05:00  INFO 16968 --- [DeporPlaza] [restartedMain] c.S.DeporPlaza.DeporPlazaApplication     : Starting DeporPlazaApplication using Java 21.0.8 with PID 16968 (C:\Users\JOSE-PC\PROYECTOS SPRING\DeporPlaza V1\DeporPlaza\target\classes started by JOSE-PC in c:\Users\JOSE-PC\PROYECTOS SPRING\DeporPlaza V1\DeporPlaza)
+2026-07-16T23:10:04.646-05:00 DEBUG 16968 --- [DeporPlaza] [restartedMain] c.S.DeporPlaza.DeporPlazaApplication     : Running with Spring Boot v4.0.6, Spring v7.0.7
+2026-07-16T23:10:04.646-05:00  INFO 16968 --- [DeporPlaza] [restartedMain] c.S.DeporPlaza.DeporPlazaApplication     : No active profile set, falling back to 1 default profile: "default"
+2026-07-16T23:10:04.697-05:00  INFO 16968 --- [DeporPlaza] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-07-16T23:10:04.698-05:00  INFO 16968 --- [DeporPlaza] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-07-16T23:10:05.319-05:00  INFO 16968 --- [DeporPlaza] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-07-16T23:10:05.381-05:00  INFO 16968 --- [DeporPlaza] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 53 ms. Found 6 JPA repository interfaces.
+2026-07-16T23:10:05.945-05:00  INFO 16968 --- [DeporPlaza] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8803 (http)
+2026-07-16T23:10:05.959-05:00  INFO 16968 --- [DeporPlaza] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-07-16T23:10:05.960-05:00  INFO 16968 --- [DeporPlaza] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-07-16T23:10:06.006-05:00  INFO 16968 --- [DeporPlaza] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1308 ms
+2026-07-16T23:10:06.184-05:00  INFO 16968 --- [DeporPlaza] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-07-16T23:10:06.234-05:00  INFO 16968 --- [DeporPlaza] [restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-07-16T23:10:06.687-05:00  INFO 16968 --- [DeporPlaza] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-07-16T23:10:06.718-05:00  INFO 16968 --- [DeporPlaza] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-07-16T23:10:06.864-05:00  INFO 16968 --- [DeporPlaza] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@67799696
+2026-07-16T23:10:06.865-05:00  INFO 16968 --- [DeporPlaza] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-07-16T23:10:06.907-05:00  WARN 16968 --- [DeporPlaza] [restartedMain] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-07-16T23:10:06.927-05:00  INFO 16968 --- [DeporPlaza] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/bd_deporplaza]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: bd_deporplaza/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-07-16T23:10:07.631-05:00  INFO 16968 --- [DeporPlaza] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-07-16T23:10:07.844-05:00  INFO 16968 --- [DeporPlaza] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-07-16T23:10:07.936-05:00  INFO 16968 --- [DeporPlaza] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-07-16T23:10:09.037-05:00  WARN 16968 --- [DeporPlaza] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-07-16T23:10:09.129-05:00  INFO 16968 --- [DeporPlaza] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name usuarioDetailsService
+2026-07-16T23:10:09.304-05:00  INFO 16968 --- [DeporPlaza] [restartedMain] o.s.b.w.a.WelcomePageHandlerMapping      : Adding welcome page template: index
+2026-07-16T23:10:09.629-05:00  INFO 16968 --- [DeporPlaza] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8803 (http) with context path '/'
+2026-07-16T23:10:09.637-05:00  INFO 16968 --- [DeporPlaza] [restartedMain] c.S.DeporPlaza.DeporPlazaApplication     : Started DeporPlazaApplication in 5.448 seconds (process running for 5.886)
+2026-07-16T23:10:09.891-05:00  INFO 16968 --- [DeporPlaza] [http-nio-8803-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-07-16T23:10:09.892-05:00  INFO 16968 --- [DeporPlaza] [http-nio-8803-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-07-16T23:10:09.894-05:00  INFO 16968 --- [DeporPlaza] [http-nio-8803-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms

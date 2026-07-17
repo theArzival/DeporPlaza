@@ -51,7 +51,8 @@ public class UsuarioService {
 
             usuario.setPassword(passwordEncoder.encode(usuario.getPassword()));
             repo.save(usuario);
-            log.info("Usuario registrado por Admin correctamente. Correo: {}", usuario.getEmail());
+            log.info("Usuario registrado por Admin correctamente. Correo: {}, DNI: {}, Nombres: {}", usuario.getEmail(),
+                    usuario.getDni(), usuario.getApellidos().concat(usuario.getNombres()));
 
         } else {
             validar(usuario);
@@ -63,7 +64,8 @@ public class UsuarioService {
             usuarioBd.setTelefono(usuario.getTelefono());
             usuarioBd.setEstado(usuario.getEstado());
             usuarioBd.setRol(usuario.getRol());
-            log.info("Usuario registrado por Admin correctamente. Correo: {}", usuario.getEmail());
+            log.info("Usuario registrado por Admin correctamente. Correo: {}, DNI: {}, Nombres: {}", usuario.getEmail(),
+                    usuario.getDni(), usuario.getApellidos().concat(usuario.getNombres()));
 
             repo.save(usuarioBd);
         }
@@ -77,6 +79,7 @@ public class UsuarioService {
 
     public void eliminar(Integer idUsuario) {
         repo.deleteById(idUsuario);
+        log.info("Usuario eliminado correctamente. IdUsuario: {}", idUsuario);
     }
 
     public Usuario buscarById(Integer idUsuario) {

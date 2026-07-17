@@ -46,8 +46,8 @@ public class ReservaService {
 
         reservaRepository.save(reserva);
         log.info(
-                "Reserva registrada correctamente. Usuario: {}, Campo: {}, Fecha: {}",
-                reserva.getUsuario().getIdUsuario(),
+                "Reserva registrada correctamente. Usuario: {}, IdCampo: {}, Fecha: {}",
+                reserva.getUsuario().getDni(),
                 reserva.getCampo().getIdCampo(),
                 reserva.getFechaReserva());
     }
@@ -89,8 +89,11 @@ public class ReservaService {
         }
     }
 
-    public void eliminar(Integer idUsuario) {
-        reservaRepository.deleteById(idUsuario);
+    public void eliminar(Integer idReserva) {
+        reservaRepository.deleteById(idReserva);
+        log.info(
+                "Reserva eliminada correctamente. IdReserva: {}",
+                idReserva);
     }
 
     public Reserva buscarById(Integer idReserva) {
